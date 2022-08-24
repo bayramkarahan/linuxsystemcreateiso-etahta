@@ -11,14 +11,16 @@ source ./3_kernel.sh
 source ./4_firmware.sh
 #################### 17g install
 source ./5_17g.sh
-#################### language settings (Turkish)
-source ./6_language.sh
 #################### xorg install (gui)
-source ./7_xorg.sh
+source ./6_xorg.sh
+#################### language settings (Turkish)
+source ./7_language.sh
 #################### packagex86_64 install
 source ./8_package_x86_64.sh
 #################### install osk keyboard
 source ./9_keyboard.sh
+#################### install education
+source ./10_education.sh
 #################### Set root password
 pass="live"
 echo -e "$pass\n$pass\n" | chroot chroot passwd
