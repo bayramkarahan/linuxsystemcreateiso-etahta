@@ -22,7 +22,9 @@ chroot chroot apt-get install lightdm -y # giriş ekranı olarak lightdm yerine 
 #### Install kde
 chroot chroot apt-get update
 #chroot chroot apt-get install kde-plasma-desktop kwin-x11 kscreen plasma-nm plasma-pa kwin-x11 plasma-desktop kate dolphin qml-module-org-kde-newstuff -y
-chroot chroot apt-get install  kde-plasma-desktop plasma-desktop dolphin kwin-x11 qml-module-org-kde-newstuff desktop-base kscreen plasma-nm plasma-pa kate -y
+chroot chroot apt-get install  kde-plasma-desktop plasma-desktop kde-config-screenlocker dolphin kwin-x11 qml-module-org-kde-newstuff desktop-base kscreen plasma-nm plasma-pa kate -y
+#skel dizini kopyalanıyor
+cp etc/ -rf chroot/
 
 #### etap greeter install
 chroot chroot apt-get install -f -y # eksik bağımlılıkları tamamlaması için.
