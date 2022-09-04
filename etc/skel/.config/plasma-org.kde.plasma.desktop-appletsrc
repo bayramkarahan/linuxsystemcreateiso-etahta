@@ -96,7 +96,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][62][Applets][65][Configuration][General]
-launchers=preferred://filemanager,applications:osk.desktop,applications:google-chrome.desktop,applications:e-tahta.desktop,applications:wps-office-pdf.desktop,applications:wps-office-wps.desktop,applications:wps-office-et.desktop,applications:wps-office-wpp.desktop,applications:flashplayer.desktop
+launchers=preferred://filemanager,applications:osk.desktop,applications:google-chrome.desktop,applications:e-tahta.desktop,applications:wps-office-pdf.desktop,applications:wps-office-wps.desktop,applications:wps-office-et.desktop,applications:wps-office-wpp.desktop,applications:vlc.desktop
 
 [Containments][62][Applets][66]
 immutability=1
