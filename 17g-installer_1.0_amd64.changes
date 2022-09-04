@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Mon, 21 Dec 2020 09:38:57 +0000
+Source: 17g-installer
+Binary: 17g-installer
+Architecture: all
+Version: 1.0
+Distribution: unstable
+Urgency: medium
+Maintainer: Ali Riza KESKIN <ali.riza.keskin@pardus.org.tr>
+Changed-By: Ali Riza Keskin  <ali.riza.keskin@pardus.org.tr>
+Description:
+ 17g-installer - 17g live installer
+Changes:
+ 17g-installer (1.0) unstable; urgency=medium
+ .
+   * Init
+Checksums-Sha1:
+ c23b4e9804f5cfc809df11a3edc364c118ee02b5 1159804 17g-installer_1.0_all.deb
+ 157c6fc2199b6bf48e8739c02437e141f9365536 4808 17g-installer_1.0_amd64.buildinfo
+Checksums-Sha256:
+ 38eea79f92487eab66a840462356b31bb4ab2e720c47a1ad4b742c4ee00ea50d 1159804 17g-installer_1.0_all.deb
+ d7519727756971f91c0005288555bfbb6906580d9ebde72b4a230d0e68c3c3f8 4808 17g-installer_1.0_amd64.buildinfo
+Files:
+ 7b96c8ad98c92ae23697b05a3197ccf4 1159804 utils extra 17g-installer_1.0_all.deb
+ 3b832d1d87c19b342e14d3c431535a80 4808 utils - 17g-installer_1.0_amd64.buildinfo

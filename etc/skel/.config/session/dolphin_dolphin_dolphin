@@ -1,0 +1,15 @@
+[1]
+Active Tab Index=0
+Tab Count=1
+Tab Data 0=\x00\x00\x00\x02\x00\x00\x00\x00\x16file:///home/etapadmin\x00\x00\x00\x00\x01\x00\x00\x00\x1dfile:///home/etapadmin/.cache\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x1b\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x01\x00\x00\xff\xff\xff\xff\x01\x00\x00\x00\x01\x00
+Tab Data 1=\x00\x00\x00\x02\x00\x00\x00\x00\x16file:///home/etapadmin\x00\x00\x00\x00\x01\x00\x00\x00\x1ffile:///home/etapadmin/.profile\x00\x00\x00\x01\x00\x00\x00\x1ffile:///home/etapadmin/.profile\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x1b\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x01\x00\x00\xff\xff\xff\xff\x01\x00\x00\x00\x01\x00
+
+[WindowProperties1]
+ClassName=DolphinMainWindow
+ObjectName=Dolphin#1
+RestorePositionForNextInstance=false
+State=AAAA/wAAAAD9AAAAAwAAAAAAAAC4AAACE/wCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAAAoBAAAD+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAABDAAACEwAAAF0BAAADAAAAAQAAAAAAAAAA/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAAD/////AAAACgEAAAMAAAADAAAAAAAAAAD8AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAAA/////wAAAAoBAAADAAAC9wAAAhMAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAA=
+Virtual1 Height 768=598
+Virtual1 Width 1024=944
+Virtual1 XPosition=6
+Virtual1 YPosition=29

@@ -13,9 +13,12 @@ apt-get install git devscripts equivs -y
 #### Chroot create
 mkdir chroot  # || true
 ##### For debian
-debootstrap --arch=amd64 --no-merged-usr sid chroot https://deb.debian.org/debian
-echo 'deb https://deb.debian.org/debian sid main contrib non-free' > chroot/etc/apt/sources.list
 
+#debootstrap --arch=amd64 --no-merged-usr sid chroot https://deb.debian.org/debian
+#echo 'deb https://deb.debian.org/debian sid main contrib non-free' > chroot/etc/apt/sources.list
+
+debootstrap --arch=amd64 --no-merged-usr yirmibir chroot https://depo.pardus.org.tr/pardus
+echo 'deb https://depo.pardus.org.tr/pardus yirmibir main contrib non-free' > chroot/etc/apt/sources.list
 
 #### Fix apt & bind
 # apt sandbox user root

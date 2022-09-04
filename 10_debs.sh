@@ -1,0 +1,15 @@
+#!/bin/bash
+#### install debs
+
+
+echo "kurulacak***************************************************************"
+mkdir chroot/tmp/debs
+wget -O debs/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+cp debs/* chroot/tmp/debs/
+
+
+cp debs.sh chroot/tmp/debs/debs.sh
+#run install
+chroot chroot /tmp/debs/debs.sh
+

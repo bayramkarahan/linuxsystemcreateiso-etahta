@@ -1,0 +1,6 @@
+[Desktop Entry]
+Icon=text-plain
+Name=Local State
+Type=Link
+URL[$e]=file:$HOME/.config/google-chrome/Local State
+X-KDE-LastOpenedWith=org.kde.kate

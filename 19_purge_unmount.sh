@@ -1,13 +1,16 @@
 #!/bin/bash
 #### Run chroot shell
-#chroot chroot /bin/bash || true
+cp usr/ -rf chroot/
+cp opt/ -rf chroot/
+wget -O /opt/e-tahta/e-tahta https://github.com/bayramkarahan/e-tahta-appimage/raw/master/e-tahta
 
+
+#chroot chroot /bin/bash || true
 ### Remove sudo (optional)
 #chroot chroot apt purge sudo -y
 chroot chroot apt autoremove -y
 #chroot chroot apt-get update
-#chroot chroot apt-get install kde-plasma-desktop -y
-
+rm -rf chroot/etc/apt/sources.list.d/*
 #### Clear logs and history
 chroot chroot apt-get clean
 

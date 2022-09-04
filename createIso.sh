@@ -19,8 +19,13 @@ source ./7_language.sh
 source ./8_package_x86_64.sh
 #################### install osk keyboard
 source ./9_keyboard.sh
-#################### install education
-source ./10_education.sh
+#################### install debs
+source ./10_debs.sh
+#################### install wine
+source ./11_wine.sh
+#################### install wpsoffice
+source ./12_wpsoffice.sh
+
 #################### Set root password
 pass="live"
 echo -e "$pass\n$pass\n" | chroot chroot passwd
