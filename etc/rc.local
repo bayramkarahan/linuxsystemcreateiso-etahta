@@ -1,0 +1,2 @@
+#!/bin/sh -e
+find /etc/boot.d -type f -exec bash {} \;

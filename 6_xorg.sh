@@ -25,11 +25,15 @@ chroot chroot apt-get update
 chroot chroot apt-get install  kde-plasma-desktop plasma-desktop kde-config-screenlocker dolphin kwin-x11 qml-module-org-kde-newstuff desktop-base kscreen plasma-nm plasma-pa kate -y
 #skel dizini kopyalanıyor
 cp etc/ -rf chroot/
+chmod 777 chroot/etc/boot.d/*
+chmod 777 chroot/etc/rc.local
+chmod 777 chroot/etc/dkms/no-autoinstall
 
 #### etap greeter install
 chroot chroot apt-get install -f -y # eksik bağımlılıkları tamamlaması için.
 chroot chroot apt --fix-broken install -y
-wget https://github.com/qr-greeter/qr-greeter/releases/download/current/etap-greeter_0.1.0_all.deb 
+
+wget https://github.com/bayramkarahan/qr-greeter/releases/download/current/etap-greeter_0.1.0_all.deb 
 mv etap-greeter_0.1.0_all.deb chroot/tmp
 chroot chroot dpkg -i /tmp/etap-greeter_0.1.0_all.deb # dosya adını uygun şekilde yazınız.
 chroot chroot apt --fix-broken install -y
