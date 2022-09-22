@@ -1,0 +1,6 @@
+[Desktop Entry]
+Icon=inode-directory
+Name=.pki
+Type=Link
+URL[$e]=file:$HOME/.pki
+X-KDE-LastOpenedWith=

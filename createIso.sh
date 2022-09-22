@@ -3,8 +3,6 @@
 source ./1_init.sh
 #################### createsystem
 source ./2_createsystem.sh
-#################### meb sertifikası
-source ./3_0_sertifika.sh
 #################### kernel install
 source ./3_kernel.sh
 #################### firmware install
@@ -29,6 +27,8 @@ source ./12_wpsoffice.sh
 #################### Set root password
 pass="live"
 echo -e "$pass\n$pass\n" | chroot chroot passwd
+#################### meb sertifikası
+source ./18_sertifika.sh
 #################### purge unmount clean command
 source ./19_purge_unmount.sh
 #################### create live iso

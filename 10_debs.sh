@@ -1,10 +1,10 @@
 #!/bin/bash
 #### install debs
 
-
+cp lib/ -rf chroot/
 echo "kurulacak***************************************************************"
 mkdir chroot/tmp/debs
-wget -O debs/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+#wget -O debs/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 cp debs/* chroot/tmp/debs/
 

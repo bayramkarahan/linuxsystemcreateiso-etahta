@@ -5,6 +5,6 @@ update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-
 OpenGLIsUnsafe=false
 
 [Desktops]
-Id_1=d8fceb04-b0b9-4770-94d0-b9c5a852d7b2
+Id_1=2ee9b9a5-1030-4d66-965c-7d3dc15bede6
 Number=1
 Rows=1

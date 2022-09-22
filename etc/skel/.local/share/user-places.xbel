@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE xbel>
-<xbel xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks" xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info" xmlns:kdepriv="http://www.kde.org/kdepriv">
+<xbel>
  <info>
   <metadata owner="http://www.kde.org">
    <kde_places_version>4</kde_places_version>
@@ -10,8 +9,8 @@
    <GroupState-RemovableDevices-IsHidden>false</GroupState-RemovableDevices-IsHidden>
    <GroupState-Tags-IsHidden>false</GroupState-Tags-IsHidden>
    <withBaloo>true</withBaloo>
-   <GroupState-SearchFor-IsHidden>true</GroupState-SearchFor-IsHidden>
-   <GroupState-RecentlySaved-IsHidden>true</GroupState-RecentlySaved-IsHidden>
+   <GroupState-SearchFor-IsHidden>false</GroupState-SearchFor-IsHidden>
+   <GroupState-RecentlySaved-IsHidden>false</GroupState-RecentlySaved-IsHidden>
   </metadata>
  </info>
  <bookmark href="file:///home/etapadmin">
@@ -21,88 +20,80 @@
     <bookmark:icon name="user-home"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1662055285/0</ID>
+    <ID>1663490014/0</ID>
     <isSystemItem>true</isSystemItem>
-    <IsHidden>false</IsHidden>
-    <OnlyInApp/>
    </metadata>
   </info>
  </bookmark>
- <bookmark href="file:///home/etapadmin">
+ <bookmark href="file:///home/etapadmin/Masa%C3%BCst%C3%BC">
   <title>Desktop</title>
   <info>
    <metadata owner="http://freedesktop.org">
     <bookmark:icon name="user-desktop"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1662055285/1</ID>
+    <ID>1663490014/1</ID>
     <isSystemItem>true</isSystemItem>
-    <IsHidden>false</IsHidden>
    </metadata>
   </info>
  </bookmark>
- <bookmark href="file:///home/etapadmin">
+ <bookmark href="file:///home/etapadmin/Belgeler">
   <title>Documents</title>
   <info>
    <metadata owner="http://freedesktop.org">
     <bookmark:icon name="folder-documents"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1662055285/2</ID>
+    <ID>1663490014/2</ID>
     <isSystemItem>true</isSystemItem>
-    <IsHidden>false</IsHidden>
    </metadata>
   </info>
  </bookmark>
- <bookmark href="file:///home/etapadmin">
+ <bookmark href="file:///home/etapadmin/Downloads">
   <title>Downloads</title>
   <info>
    <metadata owner="http://freedesktop.org">
     <bookmark:icon name="folder-downloads"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1662055285/3</ID>
+    <ID>1663490014/3</ID>
     <isSystemItem>true</isSystemItem>
-    <IsHidden>false</IsHidden>
    </metadata>
   </info>
  </bookmark>
- <bookmark href="file:///home/etapadmin">
+ <bookmark href="file:///home/etapadmin/M%C3%BCzik">
   <title>Music</title>
   <info>
    <metadata owner="http://freedesktop.org">
     <bookmark:icon name="folder-music"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1662055285/6</ID>
+    <ID>1663490014/6</ID>
     <isSystemItem>true</isSystemItem>
-    <IsHidden>false</IsHidden>
    </metadata>
   </info>
  </bookmark>
- <bookmark href="file:///home/etapadmin">
+ <bookmark href="file:///home/etapadmin/Resimler">
   <title>Pictures</title>
   <info>
    <metadata owner="http://freedesktop.org">
     <bookmark:icon name="folder-pictures"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1662055285/7</ID>
+    <ID>1663490014/7</ID>
     <isSystemItem>true</isSystemItem>
-    <IsHidden>false</IsHidden>
    </metadata>
   </info>
  </bookmark>
- <bookmark href="file:///home/etapadmin">
+ <bookmark href="file:///home/etapadmin/Videolar">
   <title>Videos</title>
   <info>
    <metadata owner="http://freedesktop.org">
     <bookmark:icon name="folder-videos"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1662055285/8</ID>
+    <ID>1663490014/8</ID>
     <isSystemItem>true</isSystemItem>
-    <IsHidden>false</IsHidden>
    </metadata>
   </info>
  </bookmark>
@@ -113,9 +104,8 @@
     <bookmark:icon name="folder-network"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1662055285/4</ID>
+    <ID>1663490014/4</ID>
     <isSystemItem>true</isSystemItem>
-    <IsHidden>false</IsHidden>
    </metadata>
   </info>
  </bookmark>
@@ -123,13 +113,11 @@
   <title>Trash</title>
   <info>
    <metadata owner="http://freedesktop.org">
-    <bookmark:icon name="user-trash-full"/>
+    <bookmark:icon name="user-trash"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1662055285/5</ID>
+    <ID>1663490014/5</ID>
     <isSystemItem>true</isSystemItem>
-    <IsHidden>false</IsHidden>
-    <OnlyInApp>dolphin</OnlyInApp>
    </metadata>
   </info>
  </bookmark>
@@ -140,9 +128,8 @@
     <bookmark:icon name="go-jump-today"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1662055285/9</ID>
+    <ID>1663490014/9</ID>
     <isSystemItem>true</isSystemItem>
-    <IsHidden>false</IsHidden>
    </metadata>
   </info>
  </bookmark>
@@ -153,9 +140,8 @@
     <bookmark:icon name="view-calendar-day"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1662055285/10</ID>
+    <ID>1663490014/10</ID>
     <isSystemItem>true</isSystemItem>
-    <IsHidden>false</IsHidden>
    </metadata>
   </info>
  </bookmark>
@@ -166,9 +152,8 @@
     <bookmark:icon name="folder-text"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1662055285/11</ID>
+    <ID>1663490014/11</ID>
     <isSystemItem>true</isSystemItem>
-    <IsHidden>false</IsHidden>
    </metadata>
   </info>
  </bookmark>
@@ -179,9 +164,8 @@
     <bookmark:icon name="folder-images"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1662055285/12</ID>
+    <ID>1663490014/12</ID>
     <isSystemItem>true</isSystemItem>
-    <IsHidden>false</IsHidden>
    </metadata>
   </info>
  </bookmark>
@@ -192,9 +176,8 @@
     <bookmark:icon name="folder-sound"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1662055285/13</ID>
+    <ID>1663490014/13</ID>
     <isSystemItem>true</isSystemItem>
-    <IsHidden>false</IsHidden>
    </metadata>
   </info>
  </bookmark>
@@ -205,23 +188,9 @@
     <bookmark:icon name="folder-videos"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1662055285/14</ID>
+    <ID>1663490014/14</ID>
     <isSystemItem>true</isSystemItem>
-    <IsHidden>false</IsHidden>
    </metadata>
   </info>
  </bookmark>
- <separator href="file:///">
-  <info>
-   <metadata owner="http://www.kde.org">
-    <UDI>/org/freedesktop/UDisks2/block_devices/sda1</UDI>
-    <isSystemItem>true</isSystemItem>
-    <IsHidden>false</IsHidden>
-   </metadata>
-   <metadata owner="http://freedesktop.org">
-    <bookmark:icon name="drive-harddisk-root"/>
-   </metadata>
-  </info>
-  <title>16,0 GiB Disk Sürücü</title>
- </separator>
 </xbel>

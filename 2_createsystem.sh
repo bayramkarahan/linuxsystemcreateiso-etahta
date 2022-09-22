@@ -17,11 +17,11 @@ mkdir chroot  # || true
 #debootstrap --arch=amd64 --no-merged-usr sid chroot https://deb.debian.org/debian
 #echo 'deb https://deb.debian.org/debian sid main contrib non-free' > chroot/etc/apt/sources.list
 
-debootstrap --arch=amd64 --no-merged-usr stable chroot https://deb.debian.org/debian
-echo 'deb https://deb.debian.org/debian stable main contrib non-free' > chroot/etc/apt/sources.list
+#debootstrap --arch=amd64 --no-merged-usr stable chroot https://deb.debian.org/debian
+#echo 'deb https://deb.debian.org/debian stable main contrib non-free' > chroot/etc/apt/sources.list
 
-#debootstrap --arch=amd64 --no-merged-usr yirmibir chroot https://depo.pardus.org.tr/pardus
-#echo 'deb https://depo.pardus.org.tr/pardus yirmibir main contrib non-free' > chroot/etc/apt/sources.list
+debootstrap --arch=amd64 --no-merged-usr yirmibir chroot https://depo.pardus.org.tr/pardus
+echo 'deb https://depo.pardus.org.tr/pardus yirmibir main contrib non-free' > chroot/etc/apt/sources.list
 
 #debootstrap --arch=amd64 --no-merged-usr ondokuz chroot https://19.depo.pardus.org.tr/etap
 #echo 'deb https://19.depo.pardus.org.tr/etap ondokuz main contrib non-free' > chroot/etc/apt/sources.list
@@ -58,3 +58,5 @@ DPkg::Post-Invoke {"rm -rf /usr/share/help || true";};
 DPkg::Post-Invoke {"rm -rf /usr/share/doc || true";};
 DPkg::Post-Invoke {"rm -rf /usr/share/info || true";};
 EOF
+
+

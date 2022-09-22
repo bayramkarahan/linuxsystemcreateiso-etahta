@@ -1,0 +1,6 @@
+[Desktop Entry]
+Icon=text-plain
+Name=directorysizes
+Type=Link
+URL[$e]=file:$HOME/.local/share/Trash/directorysizes
+X-KDE-LastOpenedWith=org.kde.kate

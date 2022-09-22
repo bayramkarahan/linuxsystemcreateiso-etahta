@@ -1,0 +1,6 @@
+[Desktop Entry]
+Icon=inode-directory
+Name=.config
+Type=Link
+URL[$e]=file:$HOME/.config
+X-KDE-LastOpenedWith=

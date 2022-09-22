@@ -1,6 +1,6 @@
 [ActivityManager]
 _k_friendly_name=Activity Manager
-switch-to-activity-e4ff652d-4f8c-4940-96d1-52010a019fe9=none,none,"Öntanımlı" etkinliğine geç
+switch-to-activity-965b5872-87c7-42ff-8d47-5f66bf547f09=none,none,"Öntanımlı" etkinliğine geç
 
 [KDE Keyboard Layout Switcher]
 Switch keyboard layout to Türkçe=none,none,Klavye yerleşimini 'Türkçe' yap
@@ -210,7 +210,7 @@ activate task manager entry 6=Meta+6,Meta+6,Etkin Görev Yöneticisi Girdisi 6
 activate task manager entry 7=Meta+7,Meta+7,Etkin Görev Yöneticisi Girdisi 7
 activate task manager entry 8=Meta+8,Meta+8,Etkin Görev Yöneticisi Girdisi 8
 activate task manager entry 9=Meta+9,Meta+9,Etkin Görev Yöneticisi Girdisi 9
-activate widget 63=Alt+F1,none,Uygulama Başlatıcısı Gerecini Etkinleştir
+activate widget 3=Alt+F1,none,Uygulama Başlatıcısı Gerecini Etkinleştir
 clear-history=none,none,Pano Geçmişini Temizle
 clipboard_action=Ctrl+Alt+X,Ctrl+Alt+X,Pano Eylemlerini Etkinleştir
 cycleNextAction=none,none,Sonraki Geçmiş Ögesi

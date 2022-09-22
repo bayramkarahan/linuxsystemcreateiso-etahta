@@ -1,6 +1,0 @@
-[Desktop Entry]
-Icon=text-plain
-Name=.profile
-Type=Link
-URL[$e]=file:$HOME/.profile
-X-KDE-LastOpenedWith=org.kde.kate

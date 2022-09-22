@@ -1,23 +1,23 @@
-[file:///home/etapadmin/.config/google-chrome/Local State]
+[file:///home/etapadmin/.local/share/Trash/directorysizes]
 Bookmarks=
-Checksum=31aa7a7f6867fdb083ca599ae7c7086ddc9f5df2
+Checksum=71c79e5d2589052622df936ef747b4ef886115fa
 Encoding=UTF-8
 Highlighting=None
 Highlighting Set By User=false
 Indentation Mode=normal
 Mode=Normal
 Mode Set By User=false
-Time=2022,9,4,8,4,5
-URL=file:///home/etapadmin/.config/google-chrome/Local State
+Time=2022,9,18,12,10,50
+URL=file:///home/etapadmin/.local/share/Trash/directorysizes
 
-[file:///home/etapadmin/.profile]
+[file:///home/etapadmin/.local/share/dolphin/view_properties/global/.directory]
 Bookmarks=
-Checksum=d89ea5a6e83a2956d7461b547fa0d7d68103b9c9
+Checksum=5138a8c700183e484e9a5bc5480c8ba0c06a0d82
 Encoding=UTF-8
-Highlighting=Bash
+Highlighting=None
 Highlighting Set By User=false
 Indentation Mode=normal
-Mode=Bash
+Mode=Normal
 Mode Set By User=false
-Time=2022,9,4,6,45,8
-URL=file:///home/etapadmin/.profile
+Time=2022,9,18,12,8,47
+URL=file:///home/etapadmin/.local/share/dolphin/view_properties/global/.directory

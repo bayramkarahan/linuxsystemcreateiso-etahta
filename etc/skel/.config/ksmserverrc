@@ -5,9 +5,15 @@ update_info=ksmserver_update_loginMode_value.upd:ksmserver_update_loginMode_valu
 count=0
 
 [Session: saved at previous logout]
-clientId1=10e5d47264000166227331000000039190005
-count=1
+clientId1=10e5d47264000166348989900000032770006
+clientId2=10e5d47264000166349014800000032770009
+count=2
+discardCommand2[$e]=rm,$HOME/.config/session/konsole_10e5d47264000166349014800000032770009_1663490181_328729
 program1=pulseaudio
+program2=/usr/bin/konsole
 restartCommand1=
+restartCommand2=/usr/bin/konsole,-session,10e5d47264000166349014800000032770009_1663490181_328729
 restartStyleHint1=0
+restartStyleHint2=0
 userId1=etapadmin
+userId2=etapadmin

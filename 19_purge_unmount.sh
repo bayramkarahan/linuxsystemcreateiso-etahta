@@ -1,10 +1,15 @@
 #!/bin/bash
-#### Run chroot shell
-cp usr/ -rf chroot/
-cp opt/ -rf chroot/
-mkdir chroot/opt/e-tahta
-wget -O chroot/opt/e-tahta/e-tahta https://github.com/bayramkarahan/e-tahta-appimage/raw/master/e-tahta
-chmod 777 chroot/opt/e-tahta/e-tahta
+
+for item in $(ls chroot/usr/share/locale)
+do
+	if [ $item != 'tr' ] 
+	then
+		if [ $item != 'en' ] 
+		then
+		rm -rf chroot/usr/share/locale/$item
+		fi
+	fi	
+done
 
 #chroot chroot /bin/bash || true
 ### Remove sudo (optional)

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Icon=osk
+Type=Application
+Exec=python3 /usr/share/osk/application.py --no-headerbar
+Name=osk
+GenericName=osk
+Categories=Qt;Utility;

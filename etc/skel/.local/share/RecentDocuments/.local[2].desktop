@@ -1,0 +1,6 @@
+[Desktop Entry]
+Icon=inode-directory
+Name=.local
+Type=Link
+URL[$e]=file:$HOME/.local
+X-KDE-LastOpenedWith=

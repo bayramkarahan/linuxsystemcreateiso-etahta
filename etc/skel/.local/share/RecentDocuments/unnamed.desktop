@@ -1,0 +1,6 @@
+[Desktop Entry]
+Icon=user-trash-full
+Name=
+Type=Link
+URL[$e]=trash:/
+X-KDE-LastOpenedWith=org.kde.dolphin

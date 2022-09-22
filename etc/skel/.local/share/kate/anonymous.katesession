@@ -6,7 +6,7 @@ Highlighting Set By User=false
 Indentation Mode=normal
 Mode=Normal
 Mode Set By User=false
-URL=file:///home/etapadmin/.config/google-chrome/Local State
+URL=file:///home/etapadmin/.local/share/Trash/directorysizes
 
 [Kate Plugins]
 externaltoolsplugin=true
@@ -34,7 +34,7 @@ textfilterplugin=true
 
 [MainWindow0]
 Active ViewSpace=0
-Kate-MDI-H-Splitter=200,995,200
+Kate-MDI-H-Splitter=200,615,200
 Kate-MDI-Sidebar-0-Splitter=0,0,0
 Kate-MDI-Sidebar-1-Splitter=
 Kate-MDI-Sidebar-2-Splitter=
@@ -65,32 +65,30 @@ Kate-MDI-ToolView-kateprojectinfo-Persistent=false
 Kate-MDI-ToolView-kateprojectinfo-Position=3
 Kate-MDI-ToolView-kateprojectinfo-Sidebar-Position=1
 Kate-MDI-ToolView-kateprojectinfo-Visible=false
-Kate-MDI-V-Splitter=150,583,200
-State=AAAA/wAAAAD9AAAAAAAABAAAAAJkAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
-Virtual1 Window-Maximized 1024x768=true
+Kate-MDI-V-Splitter=150,435,200
+State=AAAA/wAAAAD9AAAAAAAAAoAAAAHKAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 Virtual1 XPosition=0
 Virtual1 YPosition=29
 
 [MainWindow0 Settings]
-State=AAAA/wAAAAD9AAAAAAAABAAAAAJkAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
-Virtual1 Window-Maximized 1024x768=true
+State=AAAA/wAAAAD9AAAAAAAAAoAAAAHKAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 Virtual1 XPosition=0
 Virtual1 YPosition=29
-WindowState=10
+WindowState=8
 
 [MainWindow0-Splitter 0]
 Children=MainWindow0-ViewSpace 0
 Orientation=1
-Sizes=995
+Sizes=615
 
 [MainWindow0-ViewSpace 0]
-Active View=file:///home/etapadmin/.config/google-chrome/Local State
+Active View=file:///home/etapadmin/.local/share/Trash/directorysizes
 Count=1
-Documents=file:///home/etapadmin/.config/google-chrome/Local State
-View 0=file:///home/etapadmin/.config/google-chrome/Local State
+Documents=file:///home/etapadmin/.local/share/Trash/directorysizes
+View 0=file:///home/etapadmin/.local/share/Trash/directorysizes
 
-[MainWindow0-ViewSpace 0 file:///home/etapadmin/.config/google-chrome/Local State]
-CursorColumn=0
+[MainWindow0-ViewSpace 0 file:///home/etapadmin/.local/share/Trash/directorysizes]
+CursorColumn=26
 CursorLine=0
 Dynamic Word Wrap=true
 JumpList=
@@ -136,13 +134,7 @@ SearchDiskFiless=
 UseRegExp=false
 
 [Recent Files]
-File1[$e]=/usr/share/applications/google-chrome.desktop
-File2[$e]=$HOME/.osk
-File3[$e]=$HOME/.config/trashrc
-File4[$e]=$HOME/.profile
-File5[$e]=$HOME/.config/google-chrome/Local State
-Name1[$e]=google-chrome.desktop
-Name2[$e]=.osk
-Name3[$e]=trashrc
-Name4[$e]=.profile
-Name5[$e]=Local State
+File1[$e]=$HOME/.local/share/dolphin/view_properties/global/.directory
+File2[$e]=$HOME/.local/share/Trash/directorysizes
+Name1[$e]=.directory
+Name2[$e]=directorysizes
