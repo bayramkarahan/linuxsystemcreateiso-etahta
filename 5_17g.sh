@@ -7,9 +7,9 @@ debuild -us -uc -b
 cd ..
 cp 17g-installer_1.0_all.deb chroot/tmp
 
-chroot chroot dpkg -i /tmp/17g-installer_1.0_all.deb # dosya adını uygun şekilde yazınız.
-chroot chroot apt --fix-broken install -y
-chroot chroot apt-get install -f -y # eksik bağımlılıkları tamamlaması için.
+#chroot chroot dpkg -i /tmp/17g-installer_1.0_all.deb # dosya adını uygun şekilde yazınız.
+#chroot chroot apt --fix-broken install -y
+#chroot chroot apt-get install -f -y # eksik bağımlılıkları tamamlaması için.
 
 
 cp installergui chroot/usr/bin/installergui
