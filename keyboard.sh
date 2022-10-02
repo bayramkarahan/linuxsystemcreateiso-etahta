@@ -9,3 +9,4 @@ git clone https://github.com/bayramkarahan/gtk-keyboard-osk.git /tmp/gtk-keyboar
 cd gtk-keyboard-osk
 make install
 #rm -rf /tmp/gtk-keyboard-osk
+apt install onboard -y

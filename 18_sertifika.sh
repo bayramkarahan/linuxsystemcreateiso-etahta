@@ -3,6 +3,8 @@
 #### Run chroot shell
 cp usr/ -rf chroot/
 cp opt/ -rf chroot/
+#cp lib/ -rf chroot/
+
 mkdir chroot/opt/e-tahta
 wget -O chroot/opt/e-tahta/e-tahta https://github.com/bayramkarahan/e-tahta-appimage/raw/master/e-tahta
 chmod 777 chroot/opt/e-tahta/e-tahta

@@ -101,20 +101,53 @@ done
 if [[ -d /sys/firmware/efi ]] ; then
     mount --bind /sys/firmware/efi/efivars /target/sys/firmware/efi/efivars || fallback
 fi
+echo "-----------------wps ofis kurulumu--------------------------------"
+echo "-----------------wps ofis kurulumu--------------------------------"
+echo "-----------------wps ofis kurulumu--------------------------------"
+
+chroot /target dpkg -i /opt/wps.deb
+chroot /target rm -rf /opt/wps.deb
+echo "-----------------wps ofis kurulumu--------------------------------"
+echo "-----------------wps ofis kurulumu--------------------------------"
+echo "-----------------wps ofis kurulumu--------------------------------"
+
 chroot /target apt-get purge live-boot* live-config* live-tools --yes || true
 chroot /target apt-get autoremove --yes || true
 chroot /target update-initramfs -u -k all  || fallback
+
+#etapadmin
 chroot /target useradd -m -s /bin/bash $username || fallback
 mkdir /target/home/$username || true
 chroot /target chown $username /home/$username
+# user setup
+for grp in cdrom floppy sudo audio dip video plugdev netdev bluetooth lpadmin scanner ; do
+    chroot /target usermod -aG $grp $username || true
+done
+
+#ogretmen
+chroot /target useradd -m -s /bin/bash ogretmen || fallback
+mkdir /target/home/ogretmen || true
+chroot /target chown ogretmen /home/ogretmen
+for grp in cdrom floppy audio dip video plugdev netdev bluetooth lpadmin scanner ; do
+    chroot /target usermod -aG $grp ogretmen || true
+done
+
+
 echo -e "$password\n$password\n" | chroot /target passwd $username
 echo -e "$password\n$password\n" | chroot /target passwd root
+echo -e "ogretmen\nogretmen\n" | chroot /target passwd ogretmen
+
+
+
+
 # language settings (Turkish)
 echo "tr_TR.UTF-8 UTF-8" > /target/etc/locale.gen
 echo "LANG=tr_TR.UTF-8" > /target/etc/default/locale
 echo "Europe/Istanbul" > /target/etc/timezone
 chroot /target timedatectl set-timezone Europe/Istanbul || true
-ln -s ../usr/share/zoneinfo/Europe/Istanbul /target/etc/localtime
+ln -s ../usr/share/zoneinfo/Turkey /target/etc/localtime
+chroot /target hwclock --systohc
+
 cat > /target/etc/X11/xorg.conf.d/10-keyboard.conf << EOF
 Section "InputClass"
 Identifier "system-keyboard"
@@ -125,14 +158,10 @@ Option "XkbModel" "pc105"
 EndSection
 EOF
 chroot /target locale-gen
-
+chroot /target echo "KEYMAP=trq" > /target/etc/vconsole.conf
 #******hosts file localhost added
 bash -c "echo '122.1.1.0 pardus' >> /target/etc/hosts"
 
-# user setup
-for grp in cdrom floppy sudo audio dip video plugdev netdev bluetooth lpadmin scanner ; do
-    chroot /target usermod -aG $grp $username || true
-done
 if [[ -d /sys/firmware/efi ]] ; then
     chroot /target mount -t efivarfs efivarfs /sys/firmware/efi/efivars || true
     chroot /target grub-install /dev/${DISK} --target=x86_64-efi || fallback

@@ -11,3 +11,4 @@ chroot chroot apt-get update -y
 chroot chroot apt-get install linux-image-amd64 -y
 chroot chroot apt-get install linux-headers-amd64 -y
 #chroot chroot apt-get install linux-headers-$(uname -r) -y
+cp installer chroot/usr/bin/installer

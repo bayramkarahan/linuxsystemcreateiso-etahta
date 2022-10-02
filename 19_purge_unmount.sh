@@ -14,6 +14,8 @@ done
 #chroot chroot /bin/bash || true
 ### Remove sudo (optional)
 #chroot chroot apt purge sudo -y
+#chroot chroot apt remove thunar -y
+#chroot chroot apt purge thunar -y
 chroot chroot apt autoremove -y
 #chroot chroot apt-get update
 rm -rf chroot/etc/apt/sources.list.d/*

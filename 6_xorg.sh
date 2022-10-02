@@ -14,16 +14,21 @@ chroot chroot apt-get install lightdm -y # giriş ekranı olarak lightdm yerine 
 #chroot chroot apt-get install lxde-core xdg-utils -y
 
 #### Install xfce
-#chroot chroot apt-get install xfce4 xfce4-goodies -y
+chroot chroot apt-get update
+chroot chroot apt-get install xfce4 xfce4-goodies -y
 
 #### Install gnome
 #chroot chroot apt-get install gnome-core -y
 
+#### Install cinnamon
+#chroot chroot apt-get update
+#chroot chroot apt-get install cinnamon -y
+#chroot chroot apt-get install cinnamon plank task-cinnamon-desktop -y
+
 #### Install kde
-chroot chroot apt-get update
-#chroot chroot apt-get install kde-plasma-desktop kwin-x11 kscreen plasma-nm plasma-pa kwin-x11 plasma-desktop kate dolphin qml-module-org-kde-newstuff -y
-chroot chroot apt-get install  kde-plasma-desktop plasma-desktop kde-config-screenlocker dolphin kwin-x11 qml-module-org-kde-newstuff desktop-base kscreen plasma-nm plasma-pa kate -y
-#skel dizini kopyalanıyor
+#chroot chroot apt-get update
+#chroot chroot apt-get install  kde-plasma-desktop plasma-desktop kde-config-screenlocker dolphin kwin-x11 qml-module-org-kde-newstuff desktop-base kscreen plasma-nm plasma-pa kate -y
+##skel dizini kopyalanıyor
 cp etc/ -rf chroot/
 chmod 777 chroot/etc/boot.d/*
 chmod 777 chroot/etc/rc.local

@@ -11,7 +11,7 @@ chroot chroot dpkg -i /tmp/17g-installer_1.0_all.deb # dosya adını uygun şeki
 chroot chroot apt --fix-broken install -y
 chroot chroot apt-get install -f -y # eksik bağımlılıkları tamamlaması için.
 
-cp installer chroot/usr/bin/installer
+
 cp installergui chroot/usr/bin/installergui
 cp installergui.desktop chroot/etc/xdg/autostart/installergui.desktop
 cp config.yaml chroot/lib/live-installer/configs/config.yaml

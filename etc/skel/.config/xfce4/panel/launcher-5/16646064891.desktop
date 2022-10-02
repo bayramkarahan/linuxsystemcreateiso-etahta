@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Onboard
+GenericName=Onboard onscreen keyboard
+Comment=Flexible onscreen keyboard
+Exec=onboard
+Terminal=false
+Type=Application
+Categories=Utility;Accessibility;
+Keywords=onscreen;keyboard;accessibility;utility;
+Icon=/usr/share/local/keyboard.png
+X-Ubuntu-Gettext-Domain=onboard
+X-XFCE-Source=file:///usr/share/applications/onboard.desktop
+Path=
+StartupNotify=false
