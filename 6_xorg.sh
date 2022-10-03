@@ -22,7 +22,7 @@ chroot chroot apt-get install lightdm -y # giriş ekranı olarak lightdm yerine 
 
 #### Install cinnamon
 chroot chroot apt-get update
-chroot chroot apt-get install cinnamon nemo-fileroller cinnamon-l10n -y
+chroot chroot apt-get install cinnamon nemo-fileroller cinnamon-l10n mousepad fonts-liberation -y
 #chroot chroot apt-get install cinnamon plank task-cinnamon-desktop -y
 
 #### Install kde
