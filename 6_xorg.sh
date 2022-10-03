@@ -14,15 +14,15 @@ chroot chroot apt-get install lightdm -y # giriş ekranı olarak lightdm yerine 
 #chroot chroot apt-get install lxde-core xdg-utils -y
 
 #### Install xfce
-chroot chroot apt-get update
-chroot chroot apt-get install xfce4 xfce4-goodies -y
+#chroot chroot apt-get update
+#chroot chroot apt-get install xfce4 xfce4-goodies -y
 
 #### Install gnome
 #chroot chroot apt-get install gnome-core -y
 
 #### Install cinnamon
-#chroot chroot apt-get update
-#chroot chroot apt-get install cinnamon -y
+chroot chroot apt-get update
+chroot chroot apt-get install cinnamon nemo-fileroller cinnamon-l10n -y
 #chroot chroot apt-get install cinnamon plank task-cinnamon-desktop -y
 
 #### Install kde

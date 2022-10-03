@@ -102,13 +102,12 @@ if [[ -d /sys/firmware/efi ]] ; then
     mount --bind /sys/firmware/efi/efivars /target/sys/firmware/efi/efivars || fallback
 fi
 echo "-----------------wps ofis kurulumu--------------------------------"
-echo "-----------------wps ofis kurulumu--------------------------------"
-echo "-----------------wps ofis kurulumu--------------------------------"
 
 chroot /target dpkg -i /opt/wps.deb
 chroot /target rm -rf /opt/wps.deb
-echo "-----------------wps ofis kurulumu--------------------------------"
-echo "-----------------wps ofis kurulumu--------------------------------"
+chroot /target dpkg -i /opt/chrome.deb
+chroot /target rm -rf /opt/chrome.deb
+
 echo "-----------------wps ofis kurulumu--------------------------------"
 
 chroot /target apt-get purge live-boot* live-config* live-tools --yes || true
