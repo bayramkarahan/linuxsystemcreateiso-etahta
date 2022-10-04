@@ -159,7 +159,7 @@ EOF
 chroot /target locale-gen
 chroot /target echo "KEYMAP=trq" > /target/etc/vconsole.conf
 #******hosts file localhost added
-bash -c "echo '122.1.1.0 pardus' >> /target/etc/hosts"
+bash -c "echo '122.1.1.0 etahta' >> /target/etc/hosts"
 
 if [[ -d /sys/firmware/efi ]] ; then
     chroot /target mount -t efivarfs efivarfs /sys/firmware/efi/efivars || true
