@@ -158,8 +158,6 @@ EndSection
 EOF
 chroot /target locale-gen
 chroot /target echo "KEYMAP=trq" > /target/etc/vconsole.conf
-#******hosts file localhost added
-bash -c "echo '122.1.1.0 etahta' >> /target/etc/hosts"
 
 if [[ -d /sys/firmware/efi ]] ; then
     chroot /target mount -t efivarfs efivarfs /sys/firmware/efi/efivars || true
@@ -170,6 +168,11 @@ fi
 echo "GRUB_DISABLE_OS_PROBER=true" >> /target/etc/default/grub
 chroot /target update-grub  || fallback
 [[ -f /target/install ]] && rm -f /target/install || true
+
+#******hosts file localhost added
+bash -c "echo '127.1.1.0 etahta' >> /target/etc/hosts"
+bash -c "echo 'etahta' > /target/etc/hostname"
+
 umount -f -R /target/* || true
 sync  || fallback
 

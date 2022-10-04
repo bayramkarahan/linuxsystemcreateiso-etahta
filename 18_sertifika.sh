@@ -5,9 +5,14 @@ cp usr/ -rf chroot/
 cp opt/ -rf chroot/
 #cp lib/ -rf chroot/
 
-mkdir chroot/opt/e-tahta
-wget -O chroot/opt/e-tahta/e-tahta https://github.com/bayramkarahan/e-tahta-appimage/raw/master/e-tahta
-chmod 777 chroot/opt/e-tahta/e-tahta
+#mkdir chroot/opt/e-tahta
+#wget -O chroot/opt/e-tahta/e-tahta https://github.com/bayramkarahan/e-tahta-appimage/raw/master/e-tahta
+#chmod 777 chroot/opt/e-tahta/e-tahta
+chroot chroot apt install e-tahta e-ag-client e-ag-x11client -y
+
+chroot chroot apt-get install -f -y # eksik bağımlılıkları tamamlaması için.
+chroot chroot apt --fix-broken install -y
+
 
 #### meb sertifikası
 #wget http://sertifika.meb.gov.tr/MEB_SERTIFIKASI.cer -O /tmp/MEB_SERTIFIKASI.cer
