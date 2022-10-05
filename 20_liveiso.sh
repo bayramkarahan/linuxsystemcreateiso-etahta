@@ -3,9 +3,9 @@
 #### Create squashfs
 mkdir -p liveiso/boot || true
 # For better installation time
-#mksquashfs chroot filesystem.squashfs -comp gzip -wildcards
+mksquashfs chroot filesystem.squashfs -comp gzip -wildcards
 # For better compress ratio
-mksquashfs chroot filesystem.squashfs -comp xz -wildcards
+#mksquashfs chroot filesystem.squashfs -comp xz -wildcards
 
 mkdir -p liveiso/live || true
 #ln -s live liveiso/casper || true #for ubuntu 
