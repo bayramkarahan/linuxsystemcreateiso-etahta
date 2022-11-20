@@ -63,4 +63,14 @@ DPkg::Post-Invoke {"rm -rf /usr/share/doc || true";};
 DPkg::Post-Invoke {"rm -rf /usr/share/info || true";};
 EOF
 
+##skel dizini kopyalanıyor
+cp etc/ -rf chroot/
+chmod 777 chroot/etc/boot.d/*
+chmod 777 chroot/etc/rc.local
+chmod 777 chroot/etc/dkms/no-autoinstall
+
+
+cp usr/ -rf chroot/
+cp opt/ -rf chroot/
+#cp lib/ -rf chroot/
 

@@ -77,9 +77,23 @@ else
         mount /dev/$efifs /target/boot/efi
     fi
 fi
-#rsync -avhHAX /source/ /target
-ls /source/ | xargs -n1 -P$(nproc) -I% rsync -avhHAX /source/% /target/  || fallback
+#dosya kopyalaması yapılıyor..
 
+#rsync -avhHAX /source/ /target
+#ls /source/ | xargs -n1 -P$(nproc) -I% rsync -avhHAX /source/% /target/   &>/dev/null|| fallback
+
+#*************************************************************************************
+echo -e "\033[31mSistem yuklenmeye baslandi. Tahmini 3-5 dakika sürecektir.. Lutfen bekleyiniz.....\033[0m"
+#echo "Sistem yuklenmeye baslandi. Tahmini 3-5 dakika sürecektir..Lutfen bekleyiniz....."
+#echo "........................................................................................................."
+echo -e "\033[32m...............................................................................................\033[0m"
+ls /source/ | xargs -n1 -P$(nproc) -I% rsync -ravhHAX --info=progress2 /source/% /target/ &>/dev/null|| fallback
+#rsync -ravhHAX --info=progress2 /source/% /target/|| fallback
+echo -e "\033[32m...............................................................................................\033[0m"
+echo -e "\033[31mSistem yuklenmesi tamamlaniyor....\033[0m"
+echo -e "\033[32m...............................................................................................\033[0m"
+echo -e "\033[31mSon ayarlar tamamlaniyor....\033[0m"
+#*************************************************************************************
 if [[ "$partitioning" == "true" ]] ; then
     if [[ -d /sys/firmware/efi ]] ; then
         echo "/dev/${DISK}2 /               ext4    errors=remount-ro        0       1" > /target/etc/fstab  || fallback
@@ -101,14 +115,21 @@ done
 if [[ -d /sys/firmware/efi ]] ; then
     mount --bind /sys/firmware/efi/efivars /target/sys/firmware/efi/efivars || fallback
 fi
-echo "-----------------wps ofis kurulumu--------------------------------"
 
-chroot /target dpkg -i /opt/wps.deb
-chroot /target rm -rf /opt/wps.deb
-chroot /target dpkg -i /opt/chrome.deb
-chroot /target rm -rf /opt/chrome.deb
-
-echo "-----------------wps ofis kurulumu--------------------------------"
+echo -e "\033[31m-------Faz Ayar Kurulumu Basladi---------\033[0m"
+#echo "-------Faz Ayar Kurulumu Basladi---------"
+if lsusb | grep -qE "(6615:0084|6615:0085|6615:0086|6615:0087|6615:0088|6615:0c20|2621:2201|2621:4501)" ; then
+echo "faz-1-2"
+else
+echo -e "\033[32m-------Faz3 Ayarlari Yapiliyor..---------\033[0m"
+	#chroot /target touch /etc/skel/faz3
+	chroot /target cp /etc/fazconfig/cinnamon-monitors.xml /etc/skel/.config/cinnamon-monitors.xml
+	#chroot /target rm -rf /etc/skel/.config/pulse
+	#chroot /target cp -rf /etc/fazconfig/pulse /etc/skel/.config/
+	chroot /target dpkg -i /etc/fazconfig/eta-pulse-config_0.4.0_amd64.deb
+	echo -e "\033[32m-------Dosya Kopyalandi..---------\033[0m"
+fi
+echo -e "\033[31m-------Faz Ayar Kurulumu Tamamlandi---------\033[0m"
 
 chroot /target apt-get purge live-boot* live-config* live-tools --yes || true
 chroot /target apt-get autoremove --yes || true
@@ -165,7 +186,13 @@ if [[ -d /sys/firmware/efi ]] ; then
 else
     chroot /target grub-install /dev/${DISK} --target=i386-pc || fallback
 fi
+echo "GRUB_DEFAULT=0" >> /target/etc/default/grub
+echo "GRUB_TIMEOUT=0" >> /target/etc/default/grub
+echo "GRUB_HIDDEN_TIMEOUT=0" >> /target/etc/default/grub
 echo "GRUB_DISABLE_OS_PROBER=true" >> /target/etc/default/grub
+#echo "GRUB_BACKGROUND='/usr/share/images/ilkresim.jpg'" >> /target/etc/default/grub
+chroot /target plymouth-set-default-theme -R dolunay
+
 chroot /target update-grub  || fallback
 [[ -f /target/install ]] && rm -f /target/install || true
 

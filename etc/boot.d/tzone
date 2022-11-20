@@ -1,0 +1,3 @@
+#!/bin/bash
+timedatectl set-timezone Europe/Istanbul
+ln -sf /usr/share/zoneinfo/Europe/Istanbul /etc/localtime

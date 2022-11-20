@@ -17,20 +17,20 @@ cp -pf chroot/boot/vmlinuz-* liveiso/boot/vmlinuz
 
 #### Write grub.cfg
 mkdir -p liveiso/boot/grub/
-echo 'menuentry "Live GNU/Linux 64-bit" --class liveiso {' > liveiso/boot/grub/grub.cfg
+echo 'menuentry "Canli GNU/Linux 64-bit" --class liveiso {' > liveiso/boot/grub/grub.cfg
 echo '    linux /boot/vmlinuz boot=live quiet live-config --' >> liveiso/boot/grub/grub.cfg
 echo '    initrd /boot/initrd.img' >> liveiso/boot/grub/grub.cfg
 echo '}' >> liveiso/boot/grub/grub.cfg
 
-echo 'menuentry "Installer GNU/Linux 64-bit" --class liveiso {' >> liveiso/boot/grub/grub.cfg
+echo 'menuentry "Yukle GNU/Linux 64-bit" --class liveiso {' >> liveiso/boot/grub/grub.cfg
 echo '    linux /boot/vmlinuz boot=live quiet init=/usr/bin/installer --' >> liveiso/boot/grub/grub.cfg
 echo '    initrd /boot/initrd.img' >> liveiso/boot/grub/grub.cfg
 echo '}' >> liveiso/boot/grub/grub.cfg
 
-echo 'menuentry "Installer Graphic Screen GNU/Linux 64-bit" --class liveiso {' >> liveiso/boot/grub/grub.cfg
-echo '    linux /boot/vmlinuz boot=live username=liveinstall quiet --' >> liveiso/boot/grub/grub.cfg
-echo '    initrd /boot/initrd.img' >> liveiso/boot/grub/grub.cfg
-echo '}' >> liveiso/boot/grub/grub.cfg
+#echo 'menuentry "Installer Graphic Screen GNU/Linux 64-bit" --class liveiso {' >> liveiso/boot/grub/grub.cfg
+#echo '    linux /boot/vmlinuz boot=live username=liveinstall quiet --' >> liveiso/boot/grub/grub.cfg
+#echo '    initrd /boot/initrd.img' >> liveiso/boot/grub/grub.cfg
+#echo '}' >> liveiso/boot/grub/grub.cfg
 
 #### Create iso
 grub-mkrescue liveiso -o liveiso-gnulinux-$(date +%s).iso

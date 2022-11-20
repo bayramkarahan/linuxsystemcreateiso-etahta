@@ -2,7 +2,7 @@
 #### xorg & desktop pkgs
 
 chroot chroot apt-get install xorg xserver-xorg xinit xserver-xorg-input-multitouch xserver-xorg-input-evdev dbus-x11 -y
-chroot chroot apt-get install lightdm -y # giriş ekranı olarak lightdm yerine istediğinizi kurabilirsiniz.
+chroot chroot apt-get install slick-greeter lightdm lightdm-settings apparmor -y # giriş ekranı olarak lightdm yerine istediğinizi kurabilirsiniz.
 
 #### Install lightdm (for lxde and xfce only)
 #chroot chroot apt-get install lightdm lightdm-gtk-greeter -y
@@ -22,17 +22,16 @@ chroot chroot apt-get install lightdm -y # giriş ekranı olarak lightdm yerine 
 
 #### Install cinnamon
 chroot chroot apt-get update
-chroot chroot apt-get install cinnamon nemo-fileroller cinnamon-l10n mousepad fonts-liberation -y
+chroot chroot apt-get install cinnamon cinnamon-desktop-environment nemo-fileroller cinnamon-l10n fonts-liberation --no-install-recommends -y
+#chroot chroot apt-get install mousepad -y
+chroot chroot apt-get remove evince gnome-terminal chromium firefox-esr totem pidgin thunderbird --no-install-recommends -y
+chroot chroot apt-get autoremove -y
+
 #chroot chroot apt-get install cinnamon plank task-cinnamon-desktop -y
 
 #### Install kde
 #chroot chroot apt-get update
 #chroot chroot apt-get install  kde-plasma-desktop plasma-desktop kde-config-screenlocker dolphin kwin-x11 qml-module-org-kde-newstuff desktop-base kscreen plasma-nm plasma-pa kate -y
-##skel dizini kopyalanıyor
-cp etc/ -rf chroot/
-chmod 777 chroot/etc/boot.d/*
-chmod 777 chroot/etc/rc.local
-chmod 777 chroot/etc/dkms/no-autoinstall
 
 #### etap greeter install
 chroot chroot apt-get install -f -y # eksik bağımlılıkları tamamlaması için.

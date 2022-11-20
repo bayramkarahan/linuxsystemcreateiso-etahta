@@ -27,6 +27,10 @@ apt install mono-complete -y
 
 wget -nc -O /tmp/winemimetype.deb https://github.com/bayramkarahan/wineplugin/raw/master/winemimetype.deb
 sudo dpkg -i --force-all /tmp/winemimetype.deb
+
+wget -nc -O /tmp/wineshare.deb https://github.com/bayramkarahan/wineshare/raw/master/wineshare.deb
+sudo dpkg -i --force-all /tmp/wineshare.deb
+
 apt autoremove -y
 apt autoclean -y
 
