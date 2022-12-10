@@ -26,7 +26,7 @@ chroot chroot apt-get install cinnamon cinnamon-desktop-environment nemo-filerol
 #chroot chroot apt-get install mousepad -y
 chroot chroot apt-get remove evince gnome-terminal chromium firefox-esr totem pidgin thunderbird --no-install-recommends -y
 chroot chroot apt-get autoremove -y
-
+chroot chroot apt-get install okular -y
 #chroot chroot apt-get install cinnamon plank task-cinnamon-desktop -y
 
 #### Install kde
@@ -37,8 +37,8 @@ chroot chroot apt-get autoremove -y
 chroot chroot apt-get install -f -y # eksik bağımlılıkları tamamlaması için.
 chroot chroot apt --fix-broken install -y
 
-wget https://github.com/bayramkarahan/qr-greeter/releases/download/current/etap-greeter_0.1.0_all.deb 
-mv etap-greeter_0.1.0_all.deb chroot/tmp
-chroot chroot dpkg -i /tmp/etap-greeter_0.1.0_all.deb # dosya adını uygun şekilde yazınız.
+wget https://github.com/bayramkarahan/lightdm-greeter-custom/releases/download/current/pardus-lightdm-greeter_0.0.1_all.deb 
+mv pardus-lightdm-greeter_0.0.1_all.deb chroot/tmp
+chroot chroot dpkg -i /tmp/pardus-lightdm-greeter_0.0.1_all.deb # dosya adını uygun şekilde yazınız.
 chroot chroot apt --fix-broken install -y
 chroot chroot apt-get install -f -y # eksik bağımlılıkları tamamlaması için.

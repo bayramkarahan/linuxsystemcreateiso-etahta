@@ -1,4 +1,6 @@
 #!/bin/bash
+#klavye için gerekli paket
+chroot chroot apt-get install console-setup -y
 chroot chroot apt-get install gvfs-backends  vlc --no-install-recommends -y
 #chroot chroot apt-get install chromium chromium-l10n  -y
 chroot chroot apt-get install zip unzip sudo ark p7zip rar unrar file-roller -y

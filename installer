@@ -126,6 +126,9 @@ echo -e "\033[32m-------Faz3 Ayarlari Yapiliyor..---------\033[0m"
 	chroot /target cp /etc/fazconfig/cinnamon-monitors.xml /etc/skel/.config/cinnamon-monitors.xml
 	#chroot /target rm -rf /etc/skel/.config/pulse
 	#chroot /target cp -rf /etc/fazconfig/pulse /etc/skel/.config/
+	chroot /target mkdir  /etc/skel/.config/autostart
+	chroot /target cp  /etc/fazconfig/selectsound /etc/skel/.config/autostart/selectsound
+	chroot /target chmod 555 /etc/skel/.config/autostart/selectsound
 	chroot /target dpkg -i /etc/fazconfig/eta-pulse-config_0.4.0_amd64.deb
 	echo -e "\033[32m-------Dosya Kopyalandi..---------\033[0m"
 fi
@@ -167,6 +170,14 @@ echo "Europe/Istanbul" > /target/etc/timezone
 chroot /target timedatectl set-timezone Europe/Istanbul || true
 ln -s ../usr/share/zoneinfo/Turkey /target/etc/localtime
 chroot /target hwclock --systohc
+
+cat > /target/etc/default/keyboard << EOF
+XKBMODEL="pc105"
+XKBLAYOUT="tr"
+XKBVARIANT=""
+XKBOPTIONS=""
+BACKSPACE="guess"
+EOF
 
 cat > /target/etc/X11/xorg.conf.d/10-keyboard.conf << EOF
 Section "InputClass"
