@@ -21,14 +21,14 @@ mkdir chroot  # || true
 #debootstrap --arch=amd64 --no-merged-usr sid chroot https://deb.debian.org/debian
 #echo 'deb https://deb.debian.org/debian sid main contrib non-free' > chroot/etc/apt/sources.list
 
-debootstrap --arch=amd64 --no-merged-usr testing chroot http://debian.linuxmint.com/latest
-echo 'deb http://debian.linuxmint.com/latest testing main contrib non-free' > chroot/etc/apt/sources.list
+#debootstrap --arch=amd64 --no-merged-usr testing chroot http://debian.linuxmint.com/latest
+#echo 'deb http://debian.linuxmint.com/latest testing main contrib non-free' > chroot/etc/apt/sources.list
 
 #debootstrap --arch=amd64 --no-merged-usr testing chroot https://deb.debian.org/debian
 #echo 'deb https://deb.debian.org/debian testing main contrib non-free' > chroot/etc/apt/sources.list
 
-#debootstrap --arch=amd64 --no-merged-usr stable chroot https://deb.debian.org/debian
-#echo 'deb https://deb.debian.org/debian stable main contrib non-free' > chroot/etc/apt/sources.list
+debootstrap --arch=amd64 --no-merged-usr stable chroot https://deb.debian.org/debian
+echo 'deb https://deb.debian.org/debian stable main contrib non-free' > chroot/etc/apt/sources.list
 
 #debootstrap --arch=amd64 --no-merged-usr yirmibir chroot https://depo.pardus.org.tr/pardus
 #echo 'deb https://depo.pardus.org.tr/pardus yirmibir main contrib non-free' > chroot/etc/apt/sources.list
