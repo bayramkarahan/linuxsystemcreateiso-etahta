@@ -1,0 +1,28 @@
+[Desktop Entry]
+Version=1.0
+Name=Web Browser
+# Only KDE 4 seems to use GenericName, so we reuse the KDE strings.
+# From Ubuntu's language-pack-kde-XX-base packages, version 9.04-20090413.
+GenericName=Web Browser
+GenericName[tr]=Web Tarayıcı
+ Gnome and KDE 3 uses Comment.
+Comment=Access the Internet
+Comment[tr]=İnternet'e erişin
+Exec=/usr/bin/brave-browser-stable %U
+StartupNotify=true
+Terminal=false
+Icon=tarayici
+Type=Application
+Categories=Network;WebBrowser;
+MimeType=application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ipfs;x-scheme-handler/ipns;
+Actions=new-window;new-private-window;
+
+[Desktop Action new-window]
+Name[en_GB]=New Window
+Name[tr]=Yeni Pencere
+Exec=/usr/bin/brave-browser-stable
+
+[Desktop Action new-private-window]
+Name[en_GB]=New Incognito window
+Name[tr]=Yeni Gizli pencere
+Exec=/usr/bin/brave-browser-stable --incognito
