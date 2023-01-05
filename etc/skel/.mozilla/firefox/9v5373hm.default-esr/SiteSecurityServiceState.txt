@@ -1,0 +1,1 @@
+www.mozilla.org^partitionKey=%28http%2Cmozilla.org%29:HSTS	0	19362	1688634840706,1,1,2
