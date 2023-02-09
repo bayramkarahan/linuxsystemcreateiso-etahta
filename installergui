@@ -1,0 +1,9 @@
+#!/bin/bash
+if [[ $USER == 'liveinstall' ]]; then
+xrandr -s 1280x768
+/usr/bin/config-yaml-copy
+/usr/bin/live-installer
+
+fi
+
+

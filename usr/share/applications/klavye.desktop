@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Icon=osk
+Type=Application
+Exec=onboard
+Name=osk
+GenericName=Klavye
+Name[tr_TR.UTF-8]=klavye

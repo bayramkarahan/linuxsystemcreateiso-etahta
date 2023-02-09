@@ -1,0 +1,253 @@
+#!/bin/bash
+export PATH=/usr/bin:/usr/sbin:/bin:/sbin
+# installation tool for https://gitlab.com/sulincix/outher/-/blob/gh-pages/remaster.sh
+msg(){
+    echo -e "\033[32;1m$1\033[;0m"
+}
+echo "export DISK=sda" > /etc/install.conf
+echo "export username=etapadmin" >> /etc/install.conf
+echo "export password=etap+pardus!" >> /etc/install.conf
+echo "export debug=false" >> /etc/install.conf
+echo "export partitioning=true" >> /etc/install.conf
+echo "If you press any key in 3 seconds, switch to edit mode"
+echo "Waiting 3 seconds..."
+if read -n 1 -t 3 -s ; then
+    nano /etc/install.conf
+fi
+source /etc/install.conf
+if [[ $UID -eq 0 ]] ; then
+    mount -t devtmpfs devtmpfs /dev || true
+    mount -t proc proc /proc || true
+    mount -t sysfs sysfs /sys || true
+    mount -t efivarfs efivars /sys/firmware/efi/efivars || true
+fi
+mkdir -p /source /target || true
+mount /dev/loop0 /source || true
+
+fallback(){
+        echo -e "\033[31;1mInstallation failed.\033[;0m"
+        echo -e "Creating a shell for debuging. Good luck :D"
+        PS1="\[\033[32;1m\]>>>\[\033[;0m\]" /bin/bash --norc --noprofile
+        if [[ $$ -eq 0 ]] ; then
+            echo o > /proc/sysrq-trigger
+        else
+            exit 1
+        fi
+}
+
+if [[ "$debug" != "false" ]] ; then
+    PS1="\[\033[32;1m\]>>>\[\033[;0m\]" /bin/bash --norc --noprofile
+fi
+
+if [[ "$partitioning" == "true" ]] ; then
+    dd if=/dev/zero of=/dev/${DISK} bs=512 count=1
+    sync && sleep 1
+    if [[ -d /sys/firmware/efi ]] ; then
+        yes | parted /dev/${DISK} mktable gpt || fallback
+        yes | parted /dev/${DISK} mkpart primary fat32 1 "100MB" || fallback
+        yes | parted /dev/${DISK} mkpart primary fat32 100MB "100%" || fallback
+        sync && sleep 1
+        yes | mkfs.vfat /dev/${DISK}1 || fallback
+        sync && sleep 1
+        yes | mkfs.ext4  /dev/${DISK}2 || fallback
+        yes | parted /dev/${DISK} set 1 esp on || fallback
+        sync && sleep 1
+        mount /dev/${DISK}2  /target || fallback
+        mkdir -p /target/boot/efi || true
+        mount /dev/${DISK}1 /target/boot/efi  || fallback
+    else
+        yes | parted /dev/${DISK} mktable msdos || fallback
+        yes | parted /dev/${DISK} mkpart primary fat32 1 "100%" || fallback
+        sync && sleep 1
+        yes | mkfs.ext4 /dev/${DISK}1  || fallback
+        yes | parted /dev/${DISK} set 1 boot on || fallback
+        sync && sleep 1
+        mount /dev/${DISK}1 /target  || fallback
+    fi
+else
+    echo "Please input rootfs part (example sda2)"
+    read rootfs
+    echo "Please input mbr (example sda)"
+    read DISK
+    mount /dev/$rootfs /target
+    if [[ -d /sys/firmware/efi ]] ; then
+        echo "Please input efi part (example sda1)"
+        read efifs
+        mkdir -p /target/boot/efi
+        mount /dev/$efifs /target/boot/efi
+    fi
+fi
+#dosya kopyalaması yapılıyor..
+
+#rsync -avhHAX /source/ /target
+#ls /source/ | xargs -n1 -P$(nproc) -I% rsync -avhHAX /source/% /target/   &>/dev/null|| fallback
+
+#*************************************************************************************
+echo -e "\033[31mSistem yuklenmeye baslandi. Tahmini 3-5 dakika sürecektir.. Lutfen bekleyiniz.....\033[0m"
+#echo "Sistem yuklenmeye baslandi. Tahmini 3-5 dakika sürecektir..Lutfen bekleyiniz....."
+#echo "........................................................................................................."
+echo -e "\033[32m...............................................................................................\033[0m"
+ls /source/ | xargs -n1 -P$(nproc) -I% rsync -ravhHAX --info=progress2 /source/% /target/ &>/dev/null|| fallback
+#rsync -ravhHAX --info=progress2 /source/% /target/|| fallback
+echo -e "\033[32m...............................................................................................\033[0m"
+echo -e "\033[31mSistem yuklenmesi tamamlaniyor....\033[0m"
+echo -e "\033[32m...............................................................................................\033[0m"
+echo -e "\033[31mSon ayarlar tamamlaniyor....\033[0m"
+#*************************************************************************************
+if [[ "$partitioning" == "true" ]] ; then
+    if [[ -d /sys/firmware/efi ]] ; then
+        echo "/dev/${DISK}2 /               ext4    errors=remount-ro        0       1" > /target/etc/fstab  || fallback
+        echo "/dev/${DISK}1 /boot/efi       vfat    umask=0077               0       0" >> /target/etc/fstab  || fallback
+    else
+        echo "/dev/${DISK}1 /               ext4    errors=remount-ro        0       1" > /target/etc/fstab  || fallback
+    fi
+else
+    echo "Please write fstab file. Press any key to open editor."
+    read -n 1 -s
+    nano /target/etc/fstab
+fi
+
+for i in dev sys proc run 
+do
+    mkdir -p /target/$i || true 
+    mount --bind /$i /target/$i  || fallback
+done
+if [[ -d /sys/firmware/efi ]] ; then
+    mount --bind /sys/firmware/efi/efivars /target/sys/firmware/efi/efivars || fallback
+fi
+
+echo -e "\033[31m-------Faz Ayar Kurulumu Basladi---------\033[0m"
+#echo "-------Faz Ayar Kurulumu Basladi---------"
+if lsusb | grep -qE "(6615:0084|6615:0085|6615:0086|6615:0087|6615:0088|6615:0c20|2621:2201|2621:4501)" ; then
+echo "faz-1-2"
+else
+echo -e "\033[32m-------Faz3 Ayarlari Yapiliyor..---------\033[0m"
+	#chroot /target touch /etc/skel/faz3
+	chroot /target cp /etc/fazconfig/cinnamon-monitors.xml /etc/skel/.config/cinnamon-monitors.xml
+	#chroot /target rm -rf /etc/skel/.config/pulse
+	#chroot /target cp -rf /etc/fazconfig/pulse /etc/skel/.config/
+	chroot /target mkdir  /etc/skel/.config/autostart
+	chroot /target cp  /etc/fazconfig/selectsound /etc/skel/.config/autostart/selectsound
+	chroot /target chmod 555 /etc/skel/.config/autostart/selectsound
+	chroot /target dpkg -i /etc/fazconfig/eta-pulse-config_0.4.0_amd64.deb
+	echo -e "\033[32m-------Dosya Kopyalandi..---------\033[0m"
+fi
+echo -e "\033[31m-------Faz Ayar Kurulumu Tamamlandi---------\033[0m"
+
+chroot /target apt-get purge live-boot* live-config* live-tools --yes || true
+chroot /target apt-get autoremove --yes || true
+chroot /target update-initramfs -u -k all  || fallback
+
+#etapadmin
+chroot /target useradd -m -s /bin/bash $username || fallback
+mkdir /target/home/$username || true
+chroot /target chown $username /home/$username
+# user setup
+for grp in cdrom floppy sudo audio dip video plugdev netdev bluetooth lpadmin scanner ; do
+    chroot /target usermod -aG $grp $username || true
+done
+
+#ogretmen
+chroot /target useradd -m -s /bin/bash ogretmen || fallback
+mkdir /target/home/ogretmen || true
+mkdir /target/home/ogretmen || true
+mkdir /target/home/ogretmen/.config || true
+#no question passwd for ogretmen
+#touch /target/home/ogretmen/.config/np
+for grp in cdrom floppy audio dip video plugdev netdev bluetooth lpadmin scanner ; do
+    chroot /target usermod -aG $grp ogretmen || true
+done
+
+#ebaqr
+chroot /target useradd -m -s /bin/bash ebaqr || fallback
+mkdir /target/home/ebaqr || true
+mkdir /target/home/ebaqr || true
+mkdir /target/home/ebaqr/.config || true
+#no question passwd for ebaqr
+touch /target/home/ebaqr/.config/np
+for grp in cdrom floppy audio dip video plugdev netdev bluetooth lpadmin scanner ; do
+    chroot /target usermod -aG $grp ebaqr || true
+done
+
+echo -e "$password\n$password\n" | chroot /target passwd $username
+echo -e "$password\n$password\n" | chroot /target passwd root
+echo -e "ogretmen\nogretmen\n" | chroot /target passwd ogretmen
+echo -e "etahta+ebaqr\netahta+ebaqr\n" | chroot /target passwd ebaqr
+
+
+
+# language settings (Turkish)
+echo "tr_TR.UTF-8 UTF-8" > /target/etc/locale.gen
+echo "LANG=tr_TR.UTF-8" > /target/etc/default/locale
+echo "Europe/Istanbul" > /target/etc/timezone
+chroot /target timedatectl set-timezone Europe/Istanbul || true
+ln -s ../usr/share/zoneinfo/Turkey /target/etc/localtime
+chroot /target hwclock --systohc
+
+cat > /target/etc/default/keyboard << EOF
+XKBMODEL="pc105"
+XKBLAYOUT="tr"
+XKBVARIANT=""
+XKBOPTIONS=""
+BACKSPACE="guess"
+EOF
+#*****************************terminal türkçe karakter ayarlanmazı*********
+cat > /target/etc/default/console-setup << EOF
+ACTIVE_CONSOLES="/dev/tty[1-6]"
+CHARMAP="UTF-8"
+CODESET="Lat15"
+FONTFACE="Fixed"
+FONTSIZE="8x16"
+EOF
+chroot /target setupcon
+chroot /target setupcon --save
+#**************************************************************************
+cat > /target/etc/X11/xorg.conf.d/10-keyboard.conf << EOF
+Section "InputClass"
+Identifier "system-keyboard"
+MatchIsKeyboard "on"
+Option "XkbLayout" "tr"
+Option "XkbModel" "pc105"
+#Option "XkbVariant" "f"
+EndSection
+EOF
+chroot /target touch /usr/share/locale/locale.alias
+chroot /target locale-gen
+chroot /target echo "KEYMAP=trq" > /target/etc/vconsole.conf
+
+if [[ -d /sys/firmware/efi ]] ; then
+    chroot /target mount -t efivarfs efivarfs /sys/firmware/efi/efivars || true
+    chroot /target grub-install /dev/${DISK} --target=x86_64-efi || fallback
+else
+    chroot /target grub-install /dev/${DISK} --target=i386-pc || fallback
+fi
+echo "GRUB_DEFAULT=0" >> /target/etc/default/grub
+echo "GRUB_TIMEOUT=0" >> /target/etc/default/grub
+echo "GRUB_HIDDEN_TIMEOUT=0" >> /target/etc/default/grub
+echo "GRUB_DISABLE_OS_PROBER=true" >> /target/etc/default/grub
+echo "GRUB_BACKGROUND='/usr/share/images/ilkresim.jpg'" >> /target/etc/default/grub
+#chroot /target plymouth-set-default-theme -R dolunay
+
+chroot /target update-grub  || fallback
+[[ -f /target/install ]] && rm -f /target/install || true
+
+#******hosts file localhost added
+bash -c "echo '127.1.1.0 etahta' >> /target/etc/hosts"
+bash -c "echo 'etahta' > /target/etc/hostname"
+echo 'deb https://depo.pardus.org.tr/pardus yirmibir main contrib non-free' >> /target/etc/apt/sources.list
+rm -rf /target/usr/share/applications/sifredegistir.desktop
+
+umount -f -R /target/* || true
+sync  || fallback
+
+if [[ "$debug" != "false" ]] ; then
+    PS1="\[\033[32;1m\]>>>\[\033[;0m\]" /bin/bash --norc --noprofile
+else
+    echo "Installation done. System restarting in 3 seconds. Press any key to restart immediately."
+    read -t 3 -n 1 -s
+fi
+if [[ $UID -eq 0 ]] ; then
+    echo b > /proc/sysrq-trigger
+else
+    exit 0
+fi

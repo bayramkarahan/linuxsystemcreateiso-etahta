@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=Browser Application
+Name[tr]=Web Tarayıcısı
+Type=Application
+Comment=Web Browser Application
+Comment[tr]=Web Tarayıcısı Uygulaması
+Terminal=false
+Exec=/usr/lib/firefox/firefox %u
+Icon=tarayici
+Categories=Network;WebBrowser;
+Keywords=internet;web;browser;chrome;firefox;
+GenericName=Tarayici

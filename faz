@@ -1,0 +1,36 @@
+#!/bin/sh
+
+set -e
+INIFILE="$HOME/.config/faz3"
+if lsusb | grep -qE "(6615:0084|6615:0085|6615:0086|6615:0087|6615:0088|6615:0c20|2621:2201|2621:4501)" ; then
+echo "faz12"
+else
+echo "faz3"
+
+
+	if [ -f $INIFILE ]; then
+	     echo "dosya var"
+	else
+	touch $INIFILE
+	cp /etc/boot.d/cinnamon-monitors.xml $HOME/.config/cinnamon-monitors.xml
+	rm -rf $HOME/.config/pulse	
+	cp -rf /etc/boot.d/pulse $HOME/.config/
+
+	echo "Dosya Kopyalandı.."
+	   
+	fi
+
+fi
+
+
+#openssl x509 -inform der -in /usr/local/share/ca-certificates/MEB_SERTIFIKASI.cer -out meb.pem
+#certificateFile="meb.pem"
+#certificateName="meb" 
+
+#for certDB in $(find  ~/.mozilla* -name "cert9.db")
+#do
+#  certDir=$(dirname ${certDB});
+  ##log "mozilla certificate" "install '${certificateName}' in ${certDir}"
+#  certutil -A -n "${certificateName}" -t "TCu,Cuw,Tuw" -i ${certificateFile} -d sql:${certDir}
+#done
+

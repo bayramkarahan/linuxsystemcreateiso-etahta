@@ -1,0 +1,13 @@
+[Desktop Entry]
+
+Type=Application
+
+Version=1.0
+
+Name=installergui
+
+Exec=bash /usr/bin/installergui
+
+Categories=Settings;System;
+
+Name[tr_TR.UTF-8]=installergui.desktop

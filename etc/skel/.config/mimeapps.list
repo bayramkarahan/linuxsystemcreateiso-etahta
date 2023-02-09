@@ -1,0 +1,17 @@
+[Added Associations]
+application/x-desktop=mousepad.desktop;
+application/vnd.kde.kxmlguirc=mousepad.desktop;
+application/xml=mousepad.desktop;
+inode/directory=nemo.desktop;
+x-scheme-handler/trash=xfce4-file-manager.desktop;
+application/vnd.debian.binary-package=tr.org.pardus.package-installer.desktop;
+
+[Default Applications]
+inode/directory=nemo.desktop
+x-scheme-handler/trash=xfce4-file-manager.desktop
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+application/vnd.debian.binary-package=tr.org.pardus.package-installer.desktop

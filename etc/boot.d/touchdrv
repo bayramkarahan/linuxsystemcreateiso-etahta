@@ -1,0 +1,10 @@
+#!/bin/bash
+if [[ -f /etc/dkms/no-autoinstall ]] ; then
+    rm -f /etc/dkms/no-autoinstall
+    /var/lib/dpkg/info/eta-touchdrv.postinst configure
+fi
+#while true ; do
+#    sleep 4
+#    /usr/bin/touchdrv_install
+#done & 
+#systemctl restart eta-touchdrv.service
