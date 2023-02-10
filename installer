@@ -214,6 +214,8 @@ EOF
 chroot /target touch /usr/share/locale/locale.alias
 chroot /target locale-gen
 chroot /target echo "KEYMAP=trq" > /target/etc/vconsole.conf
+#dil ve klavye ayarlarını sisteme yansıtılıyor
+chroot /target dpkg-reconfigure --frontend noninteractive keyboard-configuration
 
 if [[ -d /sys/firmware/efi ]] ; then
     chroot /target mount -t efivarfs efivarfs /sys/firmware/efi/efivars || true

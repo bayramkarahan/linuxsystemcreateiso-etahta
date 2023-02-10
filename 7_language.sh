@@ -1,4 +1,7 @@
 #!/bin/bash
+#klavye için gerekli paket
+chroot chroot apt-get install console-setup console-common console-data keyboard-configuration  -y
+
 #### language settings (Turkish)
 echo "tr_TR.UTF-8 UTF-8" > chroot/etc/locale.gen
 echo "LANG=tr_TR.UTF-8" > chroot/etc/default/locale
