@@ -2,12 +2,9 @@
 
 for item in $(ls chroot/usr/share/locale)
 do
-	if [ $item != 'tr' ] 
+	if [ $item != 'tr' ] || [ $item != 'en' ] || [ $item != 'tr_TR.UTF-8' ] || [ $item != 'tr_TR.utf8' ] || [ $item != 'tr_TR' ] || [ $item != 'tr.UTF-8' ] || [ $item != 'tr.utf8' ]
 	then
-		if [ $item != 'en' ] 
-		then
-		#rm -rf chroot/usr/share/locale/$item
-		fi
+		rm -rf chroot/usr/share/locale/$item
 	fi	
 done
 
