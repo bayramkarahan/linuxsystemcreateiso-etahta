@@ -2,10 +2,13 @@
 
 for item in $(ls chroot/usr/share/locale)
 do
-	if [ $item != 'tr' ] || [ $item != 'en' ] || [ $item != 'tr_TR.UTF-8' ] || [ $item != 'tr_TR.utf8' ] || [ $item != 'tr_TR' ] || [ $item != 'tr.UTF-8' ] || [ $item != 'tr.utf8' ]
+	if [ "$item" == "tr" ] || [ "$item" == "en" ] || [ "$item" == "tr_TR.UTF-8" ] || [ "$item" == "tr_TR.utf8" ] || [ "$item" == "tr_TR" ] || [ "$item" == "tr.UTF-8" ] || [ "$item" == "tr.utf8" ]
 	then
+		#rm -rf ./liste/$item
+		echo "var" 1>/dev/null
+	else
 		rm -rf chroot/usr/share/locale/$item
-	fi	
+	fi
 done
 
 rm -rf chroot/usr/share/applications/xinput_calibrator.desktop
