@@ -58,6 +58,7 @@ mv greeter-qrcode.deb chroot/tmp
 chroot chroot dpkg -i /tmp/greeter-qrcode.deb # dosya adını uygun şekilde yazınız.
 mv greeter-ebaqr-ogretmen.deb chroot/tmp
 chroot chroot dpkg -i /tmp/greeter-ebaqr-ogretmen.deb # dosya adını uygun şekilde yazınız.
+chroot chroot apt install git wget gir1.2-gtk-3.0 console-setup python3-gi python3-pip usbutils tzdata python3-dev python3-pynput -y
 mv osk.deb chroot/tmp
 chroot chroot dpkg -i /tmp/osk.deb # dosya adını uygun şekilde yazınız.
 chroot chroot apt --fix-broken install -y
