@@ -223,12 +223,16 @@ if [[ -d /sys/firmware/efi ]] ; then
 else
     chroot /target grub-install /dev/${DISK} --target=i386-pc || fallback
 fi
-echo "GRUB_DEFAULT=0" >> /target/etc/default/grub
+echo "GRUB_DEFAULT=0" > /target/etc/default/grub
 echo "GRUB_TIMEOUT=0" >> /target/etc/default/grub
 echo "GRUB_HIDDEN_TIMEOUT=0" >> /target/etc/default/grub
+echo "GRUB_DISTRIBUTOR='lsb_release -i -s 2> /dev/null || echo etahta'" >> /target/etc/default/grub
+echo "GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"" >> /target/etc/default/grub
+echo "GRUB_CMDLINE_LINUX=""" >> /target/etc/default/grub
 echo "GRUB_DISABLE_OS_PROBER=true" >> /target/etc/default/grub
 echo "GRUB_BACKGROUND='/usr/share/images/ilkresim.jpg'" >> /target/etc/default/grub
-#chroot /target plymouth-set-default-theme -R dolunay
+chroot /target plymouth-set-default-theme -R lines
+chroot /target update-grub
 
 chroot /target update-grub  || fallback
 [[ -f /target/install ]] && rm -f /target/install || true
