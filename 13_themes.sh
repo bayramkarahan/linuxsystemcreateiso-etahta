@@ -5,7 +5,7 @@ i#!/bin/bash
 echo "açılış teması yapılandırılıyor"
 
 #run install
-chroot chroot apt install plymouth -y
+chroot chroot apt install plymouth* -y
 cp etap.png chroot/usr/share/plymouth/themes/lines/debian.png
 cp logo.png chroot/usr/share/plymouth/themes/lines/logo.png
 
