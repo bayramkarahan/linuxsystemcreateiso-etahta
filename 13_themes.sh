@@ -6,14 +6,14 @@ echo "açılış teması yapılandırılıyor"
 
 #run install
 chroot chroot apt install plymouth* -y
-cp etap.png chroot/usr/share/plymouth/themes/lines/debian.png
+cp etahta.png chroot/usr/share/plymouth/themes/lines/debian.png
 cp logo.png chroot/usr/share/plymouth/themes/lines/logo.png
-cp duvar.svg chroot/usr/share/desktop-base/active-theme/login/background.svg
-cp duvar.svg chroot/usr/share/desktop-base/active-theme/login/background-nologo.svg
-cp duvar.svg chroot/usr/share/desktop-base/active-theme/wallpaper/contents/images/1280x1024.svg
-cp duvar.svg chroot/usr/share/desktop-base/active-theme/wallpaper/contents/images/1600x1200.svg
-cp duvar.svg chroot/usr/share/desktop-base/active-theme/wallpaper/contents/images/1920x1080.svg
-cp duvar.svg chroot/usr/share/desktop-base/active-theme/wallpaper/contents/images/1920x1200.svg
+cp duvar.svg chroot/etc/alternatives/desktop-theme/login/background.svg
+cp duvar.svg chroot/etc/alternatives/desktop-theme/login/background-nologo.svg
+cp duvar.svg chroot/etc/alternatives/desktop-theme/wallpaper/contents/images/1280x1024.svg
+cp duvar.svg chroot/etc/alternatives/desktop-theme/wallpaper/contents/images/1600x1200.svg
+cp duvar.svg chroot/etc/alternatives/desktop-theme/wallpaper/contents/images/1920x1080.svg
+cp duvar.svg chroot/etc/alternatives/desktop-theme/wallpaper/contents/images/1920x1200.svg
 
 chroot chroot plymouth-set-default-theme -R lines
 
