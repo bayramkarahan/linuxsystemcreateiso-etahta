@@ -38,6 +38,7 @@ sudo dpkg -i --force-all /tmp/winemimetype.deb
 wget -nc -O /tmp/wineshare.deb https://github.com/bayramkarahan/wineshare/raw/master/wineshare.deb
 sudo dpkg -i --force-all /tmp/wineshare.deb
 
+
 apt autoremove -y
 apt autoclean -y
 #rm -rf /etc/apt/sources.list.d/winehq.list

@@ -150,7 +150,6 @@ done
 #ogretmen
 chroot /target useradd -m -s /bin/bash ogretmen || fallback
 mkdir /target/home/ogretmen || true
-mkdir /target/home/ogretmen || true
 mkdir /target/home/ogretmen/.config || true
 #no question passwd for ogretmen
 #touch /target/home/ogretmen/.config/np
@@ -160,7 +159,6 @@ done
 
 #ebaqr
 chroot /target useradd -m -s /bin/bash ebaqr || fallback
-mkdir /target/home/ebaqr || true
 mkdir /target/home/ebaqr || true
 mkdir /target/home/ebaqr/.config || true
 #no question passwd for ebaqr
@@ -232,7 +230,7 @@ echo "GRUB_CMDLINE_LINUX=""" >> /target/etc/default/grub
 echo "GRUB_DISABLE_OS_PROBER=true" >> /target/etc/default/grub
 echo "GRUB_BACKGROUND='/usr/share/images/ilkresim.jpg'" >> /target/etc/default/grub
 chroot /target plymouth-set-default-theme -R lines
-
+chroot /target gsettings set org.gnome.desktop.background picture-uri file:///target/usr/share/images/duvar.svg || true
 
 chroot /target update-grub  || fallback
 [[ -f /target/install ]] && rm -f /target/install || true
