@@ -46,7 +46,7 @@ wget -O greeter-keyboard.deb  https://github.com/bayramkarahan/pardus-lightdm-gr
 wget -O greeter-sshlogin.deb  https://github.com/bayramkarahan/pardus-lightdm-greeter-sshlogin/releases/download/current/pardus-lightdm-greeter-sshlogin_1.0_all.deb
 wget -O greeter-qrcode.deb  https://github.com/bayramkarahan/pardus-lightdm-greeter-qrcode/releases/download/current/pardus-lightdm-greeter-qrcode_1.0_all.deb
 wget -O greeter-ebaqr-ogretmen.deb  https://github.com/bayramkarahan/pardus-lightdm-greeter-ebaqr-ogretmen/releases/download/current/pardus-lightdm-greeter-ebaqr-ogretmen_1.0_all.deb
-wget -O osk.deb  https://github.com/bayramkarahan/gtk-keyboard-osk/releases/download/current/osk_0.1.0_all.deb
+
 
 mv greeter.deb chroot/tmp
 chroot chroot dpkg -i /tmp/greeter.deb # dosya adını uygun şekilde yazınız.
@@ -58,8 +58,5 @@ mv greeter-qrcode.deb chroot/tmp
 chroot chroot dpkg -i /tmp/greeter-qrcode.deb # dosya adını uygun şekilde yazınız.
 mv greeter-ebaqr-ogretmen.deb chroot/tmp
 chroot chroot dpkg -i /tmp/greeter-ebaqr-ogretmen.deb # dosya adını uygun şekilde yazınız.
-chroot chroot apt install git wget gir1.2-gtk-3.0 console-setup python3-gi python3-pip usbutils tzdata python3-dev python3-pynput -y
-mv osk.deb chroot/tmp
-chroot chroot dpkg -i /tmp/osk.deb # dosya adını uygun şekilde yazınız.
 chroot chroot apt --fix-broken install -y
 chroot chroot apt-get install -f -y # eksik bağımlılıkları tamamlaması için.
