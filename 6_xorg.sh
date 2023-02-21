@@ -47,7 +47,6 @@ wget -O greeter-sshlogin.deb  https://github.com/bayramkarahan/pardus-lightdm-gr
 wget -O greeter-qrcode.deb  https://github.com/bayramkarahan/pardus-lightdm-greeter-qrcode/releases/download/current/pardus-lightdm-greeter-qrcode_1.0_all.deb
 wget -O greeter-ebaqr-ogretmen.deb  https://github.com/bayramkarahan/pardus-lightdm-greeter-ebaqr-ogretmen/releases/download/current/pardus-lightdm-greeter-ebaqr-ogretmen_1.0_all.deb
 
-
 mv greeter.deb chroot/tmp
 chroot chroot dpkg -i /tmp/greeter.deb # dosya adını uygun şekilde yazınız.
 mv greeter-keyboard.deb chroot/tmp
@@ -58,5 +57,6 @@ mv greeter-qrcode.deb chroot/tmp
 chroot chroot dpkg -i /tmp/greeter-qrcode.deb # dosya adını uygun şekilde yazınız.
 mv greeter-ebaqr-ogretmen.deb chroot/tmp
 chroot chroot dpkg -i /tmp/greeter-ebaqr-ogretmen.deb # dosya adını uygun şekilde yazınız.
+
 chroot chroot apt --fix-broken install -y
 chroot chroot apt-get install -f -y # eksik bağımlılıkları tamamlaması için.
