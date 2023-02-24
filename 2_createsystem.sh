@@ -1,5 +1,6 @@
 #!/bin/bash
-
+rm /var/cache/debconf/config.dat
+dpkg --configure -a
 #### Install dependencies
 if which apt &>/dev/null && [[ -d /var/lib/dpkg && -d /etc/apt ]] ; then
     apt-get update
