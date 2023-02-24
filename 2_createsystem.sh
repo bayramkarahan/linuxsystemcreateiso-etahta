@@ -1,7 +1,8 @@
 #!/bin/bash
 apt --fix-broken install -y 
-rm /var/cache/debconf/config.dat
-dpkg --configure -a
+apt autoremove --purge grub-efi-am64-signed -y
+apt autoremove --purge grub-efi-amd64-bin -y
+apt autoremove --purge grub-efi -y
 #### Install dependencies
 if which apt &>/dev/null && [[ -d /var/lib/dpkg && -d /etc/apt ]] ; then
     apt-get update
