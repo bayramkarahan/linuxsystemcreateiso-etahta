@@ -1,4 +1,5 @@
 #!/bin/bash
+apt --fix-broken install -y 
 rm /var/cache/debconf/config.dat
 dpkg --configure -a
 #### Install dependencies
