@@ -5,7 +5,10 @@ apt-get autoclean -y
 apt-get update
 apt-get check -y
 apt-get -f install -y
-sudo apt-get upgrade -y
+apt-mark hold grub-efi-amd64-signed
+apt-get update --fix-missing -y
+apt-get upgrade -y
+
 #### Install dependencies
 if which apt &>/dev/null && [[ -d /var/lib/dpkg && -d /etc/apt ]] ; then
     apt-get update
