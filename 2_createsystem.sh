@@ -85,6 +85,6 @@ chmod 777 chroot/etc/dkms/no-autoinstall
 
 
 cp usr/ -rf chroot/
-cp opt/ -rf chroot/
+#cp opt/ -rf chroot/
 #cp lib/ -rf chroot/
 

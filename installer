@@ -124,6 +124,7 @@ else
 echo -e "\033[32m-------Faz3 Ayarlari Yapiliyor..---------\033[0m"
 	#chroot /target touch /etc/skel/faz3
 	chroot /target cp /etc/fazconfig/cinnamon-monitors.xml /etc/skel/.config/cinnamon-monitors.xml
+	chroot /target cp -f /etc/fazconfig/config.ini /usr/share/pardus/pardus-lightdm-greeter/data/config.ini
 	#chroot /target rm -rf /etc/skel/.config/pulse
 	#chroot /target cp -rf /etc/fazconfig/pulse /etc/skel/.config/
 	chroot /target mkdir  /etc/skel/.config/autostart

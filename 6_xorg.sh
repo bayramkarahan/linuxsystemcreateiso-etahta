@@ -28,7 +28,7 @@ chroot chroot apt-get install cinnamon cinnamon-desktop-environment nemo-filerol
 chroot chroot apt-get remove evince gnome-terminal chromium firefox-esr totem pidgin thunderbird --no-install-recommends -y
 chroot chroot apt-get autoremove -y
 chroot chroot apt-get install okular -y
-#chroot chroot apt-get install firefox-esr firefox-esr-l10n-tr firefox-esr-l10n-trs -y
+chroot chroot apt-get install firefox-esr firefox-esr-l10n-tr firefox-esr-l10n-trs -y
 #chroot chroot apt-get install cinnamon plank task-cinnamon-desktop -y
 
 #### Install kde
