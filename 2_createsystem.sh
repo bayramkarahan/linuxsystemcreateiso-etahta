@@ -1,34 +1,7 @@
 #!/bin/bash
-set -e
-config_item ()
-{
-    if [ -f /etc/default/grub ]; then
-	. /etc/default/grub || return
-	for x in /etc/default/grub.d/*.cfg; do
-	    if [ -e "$x" ]; then
-		. "$x"
-	    fi
-	done
-    fi
-    eval echo "\$$1"
-}
-
-## modify EFI path for GalliumOS
-sed -i "s/EFI\/ubuntu\x00\x00\x00\x00/EFI\/galliumos\x00/" \
-  /usr/lib/grub/x86_64-efi-signed/grubx64.efi.signed
-
-case $1 in
-    configure)
-	bootloader_id="$(config_item GRUB_DISTRIBUTOR | tr A-Z a-z | \
-			 cut -d' ' -f1)"
-	if [ "$bootloader_id" ] && [ -d "/boot/efi/EFI/$bootloader_id" ]; then
-	    /usr/share/grub/grub-check-signatures
-	    grub-install --target=x86_64-efi --auto-nvram
-	fi
-	;;
-esac
-
-
+apt-mark hold grub-efi-amd64-signed
+apt-get update --fix-missing -y
+apt-get upgrade -y
 #### Install dependencies
 if which apt &>/dev/null && [[ -d /var/lib/dpkg && -d /etc/apt ]] ; then
     apt-get update
