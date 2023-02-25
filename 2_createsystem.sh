@@ -1,6 +1,8 @@
 #!/bin/bash
 apt-get purge grub\*
+dpkg-reconfigure grub-efi
 apt-get install grub-efi -y
+dpkg-reconfigure grub-efi
 apt-get autoremove -y
 update-grub
 
