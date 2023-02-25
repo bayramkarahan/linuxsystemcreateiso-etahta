@@ -4,8 +4,11 @@ if which apt &>/dev/null && [[ -d /var/lib/dpkg && -d /etc/apt ]] ; then
     apt-get update
     #apt-mark hold grub-efi-amd64-signed
     #apt-get update --fix-missing -y
+    #apt-mark hold grub-efi-amd64-signed
+    apt --only-upgrade install grub-efi-amd64-signed -y
     apt-mark hold grub-efi-amd64-signed
-    #apt --only-upgrade install grub-efi-amd64-signed
+    apt-get update --fix-missing
+    apt-get upgrade
     echo "işlem başladı....."
     #rm /var/lib/dpkg/info/grub*
     #dpkg --configure -a
