@@ -8,7 +8,7 @@ apt-get -f install -y
 #apt-mark hold grub-efi-amd64-signed
 apt-get update --fix-missing -y
 apt-get upgrade -y
-
+update-grub
 #### Install dependencies
 if which apt &>/dev/null && [[ -d /var/lib/dpkg && -d /etc/apt ]] ; then
     apt-get update
