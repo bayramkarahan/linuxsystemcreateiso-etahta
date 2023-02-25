@@ -5,7 +5,7 @@ apt-get autoclean -y
 apt-get update
 apt-get check -y
 apt-get -f install -y
-apt-mark hold grub-efi-amd64-signed
+#apt-mark hold grub-efi-amd64-signed
 apt-get update --fix-missing -y
 apt-get upgrade -y
 
