@@ -6,9 +6,9 @@ apt-get update
 apt-get check -y
 apt-get -f install -y
 #apt-mark hold grub-efi-amd64-signed
-apt-get update --fix-missing -y
-apt-get upgrade -y
-update-grub
+apt purge grub-efi-amd64-signed grub-efi-amd64-bin shim-signed --allow-remove-essential
+
+
 #### Install dependencies
 if which apt &>/dev/null && [[ -d /var/lib/dpkg && -d /etc/apt ]] ; then
     apt-get update
