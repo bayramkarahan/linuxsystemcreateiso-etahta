@@ -2,17 +2,17 @@
 #### Install dependencies
 if which apt &>/dev/null && [[ -d /var/lib/dpkg && -d /etc/apt ]] ; then
     apt-get update
-    #apt-mark hold grub-efi-amd64-signed
-    #apt-get update --fix-missing -y
+    apt-mark hold grub-efi-amd64-signed
+    apt-get update --fix-missing -y
     #apt-mark hold grub-efi-amd64-signed
     #apt --only-upgrade install grub-efi-amd64-signed -y
     
     echo "işlem başladı....."
-    rm /var/lib/dpkg/info/grub*
-    dpkg --configure -a
+    #rm /var/lib/dpkg/info/grub*
+    #dpkg --configure -a
     #apt-mark hold grub-efi-amd64-signed
     #apt-get update --fix-missing
-    #apt-get upgrade
+    apt-get upgrade
     apt-get install curl mtools squashfs-tools grub-pc-bin grub-efi xorriso debootstrap  --no-install-recommends -y
     #grub-pc-bin grub-efi
 #    # For 17g package build
