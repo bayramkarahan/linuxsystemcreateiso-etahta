@@ -17,6 +17,9 @@ jobs:
           set -ex
           sudo rm /var/lib/dpkg/info/grub*
           sudo dpkg --configure -a
+          sudo apt-get update --fix-missing
+          sudo apt-get upgrade
+
           sudo apt update
           sudo apt install xorriso grub-pc-bin grub-efi mtools make python3 dosfstools e2fsprogs squashfs-tools python3-yaml gcc wget curl unzip xz-utils debootstrap git erofs-utils zstd -y
           #sudo apt install git -y
