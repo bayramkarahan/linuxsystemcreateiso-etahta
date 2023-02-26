@@ -21,6 +21,7 @@ jobs:
                 run: |
                     cd /root
                     bash createIso.sh
+                    mv *.iso /output/etahta.iso
           - uses: "marvinpinto/action-automatic-releases@latest"
             with:
                 repo_token: "${{ secrets.GITHUB_TOKEN }}"
