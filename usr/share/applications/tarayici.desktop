@@ -6,7 +6,7 @@ Type=Application
 Comment=Web Browser Application
 Comment[tr]=Web Tarayıcısı Uygulaması
 Terminal=false
-Exec=/usr/lib/firefox/firefox %u
+Exec=env MOZ_USE_XINPUT2=1 /usr/lib/firefox/firefox %u
 Icon=tarayici
 Categories=Network;WebBrowser;
 Keywords=internet;web;browser;chrome;firefox;
