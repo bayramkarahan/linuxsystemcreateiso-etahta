@@ -20,6 +20,7 @@ jobs:
                 options: -v ${{ github.workspace }}:/root -v /output:/output
                 run: |
                     cd /root
+                    #pwd
                     bash createIso.sh
                     mv *.iso /output/etahta.iso
           - uses: "marvinpinto/action-automatic-releases@latest"
