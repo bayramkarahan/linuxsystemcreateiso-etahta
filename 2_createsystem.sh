@@ -25,7 +25,7 @@ apt-get install git devscripts equivs -y
 #### Chroot create
 mkdir chroot  # || true
 ##### For debian
-#ln -s sid /usr/share/debootstrap/scripts/yirmibir
+ln -s sid /usr/share/debootstrap/scripts/yirmibir
 
 #debootstrap --arch=amd64 --no-merged-usr sid chroot https://deb.debian.org/debian
 #echo 'deb http://packages.linuxmint.com/pool/' > chroot/etc/apt/sources.list
