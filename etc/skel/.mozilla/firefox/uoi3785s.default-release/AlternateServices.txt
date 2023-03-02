@@ -1,0 +1,5 @@
+https:apis.google.com:443:.:^partitionKey=%28https%2Cgoogle.com%29:3	0	19417	https:apis.google.com:443:apis.google.com:443::n:1677654373:h3:n:1677654357:n:^partitionKey=%28https%2Cgoogle.com%29:|n:y:
+https:safebrowsing.googleapis.com:443:.:^firstPartyDomain=safebrowsing.86868755-6b82-4842-b301-72671a0db32e.mozilla:3	0	19417	https:safebrowsing.googleapis.com:443:safebrowsing.googleapis.com:443::n:1677654373:h3:n:1677654357:n:^firstPartyDomain=safebrowsing.86868755-6b82-4842-b301-72671a0db32e.mozilla:|n:y:
+https:adservice.google.com:443:.:^partitionKey=%28https%2Cgoogle.com%29:3	0	19417	https:adservice.google.com:443:adservice.google.com:443::n:1677654373:h3:n:1677654357:n:^partitionKey=%28https%2Cgoogle.com%29:|n:y:
+https:www.gstatic.com:443:.:^partitionKey=%28https%2Cgoogle.com%29:3	0	19417	https:www.gstatic.com:443:www.gstatic.com:443::n:1677654373:h3:n:1677654357:n:^partitionKey=%28https%2Cgoogle.com%29:|n:y:
+https:adservice.google.com.tr:443:.:^partitionKey=%28https%2Cgoogle.com%29:3	0	19417	https:adservice.google.com.tr:443:googleads.g.doubleclick.net:443::n:1677654373:h3:n:1677654357:n:^partitionKey=%28https%2Cgoogle.com%29:|n:y:

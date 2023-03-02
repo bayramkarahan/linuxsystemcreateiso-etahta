@@ -3,7 +3,7 @@
 
 chroot chroot apt-get install xorg xserver-xorg xinit xserver-xorg-input-multitouch xserver-xorg-input-evdev dbus-x11 -y
 chroot chroot apt-get install slick-greeter lightdm lightdm-settings apparmor -y # giriş ekranı olarak lightdm yerine istediğinizi kurabilirsiniz.
-#chroot chroot apt-get install system-config-printer system-config-printer-common cups -y
+chroot chroot apt-get install system-config-printer system-config-printer-common cups -y
 
 #### Install lightdm (for lxde and xfce only)
 #chroot chroot apt-get install lightdm lightdm-gtk-greeter -y

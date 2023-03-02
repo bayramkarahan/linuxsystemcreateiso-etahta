@@ -1,4 +1,0 @@
-https:ssl.gstatic.com:443:.:^partitionKey=%28https%2Cgoogle.com%29:3	0	19413	https:ssl.gstatic.com:443:ssl.gstatic.com:443::n:1677346181:h3:n:1677346156:n:^partitionKey=%28https%2Cgoogle.com%29:|n:y:
-https:www.gstatic.com:443:.:^partitionKey=%28https%2Cgoogle.com%29:3	0	19413	https:www.gstatic.com:443:www.gstatic.com:443::n:1679938179:h3:y:1677346156:n:^partitionKey=%28https%2Cgoogle.com%29:|n:y:
-https:fonts.gstatic.com:443:.:^partitionKey=%28https%2Cgoogle.com%29:3	0	19413	https:fonts.gstatic.com:443:fonts.gstatic.com:443::n:1679938179:h3:y:1677346156:n:^partitionKey=%28https%2Cgoogle.com%29:|n:y:
-https:ogs.google.com:443:.:^partitionKey=%28https%2Cgoogle.com%29:3	0	19413	https:ogs.google.com:443:ogs.google.com:443::n:1679938178:h3:y:1677346156:n:^partitionKey=%28https%2Cgoogle.com%29:|n:y:

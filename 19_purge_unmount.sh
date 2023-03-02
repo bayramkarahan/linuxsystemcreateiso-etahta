@@ -9,6 +9,7 @@ do
 		rm -rf chroot/usr/share/locale/$item
 	fi
 done
+
 rm -rf chroot/usr/share/applications/xinput_calibrator.desktop
 #chroot chroot /bin/bash || true
 ### Remove sudo (optional)
