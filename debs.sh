@@ -18,8 +18,8 @@ dpkg -i --force-all /tmp/debs/*.deb
 apt-get install -f -y # eksik bağımlılıkları tamamlaması için.
 apt --fix-broken install -y
 
-apt-get remove evince -y
-wget -nc -O /tmp/okularpdfreader.deb https://github.com/bayramkarahan/okularpdfreaderplugin/raw/master/okularpdfreader.deb
-dpkg -i --force-all /tmp/okularpdfreader.deb
+#apt-get remove evince -y
+#wget -nc -O /tmp/okularpdfreader.deb https://github.com/bayramkarahan/okularpdfreaderplugin/raw/master/okularpdfreader.deb
+#dpkg -i --force-all /tmp/okularpdfreader.deb
 
 

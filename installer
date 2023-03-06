@@ -141,7 +141,7 @@ chroot /target update-initramfs -u -k all  || fallback
 
 #etapadmin
 chroot /target useradd -m -s /bin/bash $username || fallback
-mkdir /target/home/$username || true
+#mkdir /target/home/$username || true
 chroot /target chown $username /home/$username
 # user setup
 for grp in cdrom floppy sudo audio dip video plugdev netdev bluetooth lpadmin scanner ; do
@@ -150,8 +150,8 @@ done
 
 #ogretmen
 chroot /target useradd -m -s /bin/bash ogretmen || fallback
-mkdir /target/home/ogretmen || true
-mkdir /target/home/ogretmen/.config || true
+#mkdir /target/home/ogretmen || true
+#mkdir /target/home/ogretmen/.config || true
 #no question passwd for ogretmen
 #touch /target/home/ogretmen/.config/np
 for grp in cdrom floppy audio dip video plugdev netdev bluetooth lpadmin scanner ; do
@@ -160,8 +160,8 @@ done
 
 #ebaqr
 chroot /target useradd -m -s /bin/bash ebaqr || fallback
-mkdir /target/home/ebaqr || true
-mkdir /target/home/ebaqr/.config || true
+#mkdir /target/home/ebaqr || true
+#mkdir /target/home/ebaqr/.config || true
 #no question passwd for ebaqr
 touch /target/home/ebaqr/.config/np
 for grp in cdrom floppy audio dip video plugdev netdev bluetooth lpadmin scanner ; do
