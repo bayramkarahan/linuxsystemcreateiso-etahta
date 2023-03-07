@@ -4,6 +4,7 @@
 
 chroot chroot apt-get update
 chroot chroot apt-get install \
+firmware-ipw2x00 firmware-ivtv firmware-linux-free  firmware-zd1211 \
 zd1211-firmware \
 firmware-linux \
 firmware-linux-nonfree \
