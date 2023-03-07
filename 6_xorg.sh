@@ -2,8 +2,8 @@
 #### xorg & desktop pkgs
 
 chroot chroot apt-get install xorg xserver-xorg xinit xserver-xorg-input-multitouch xserver-xorg-input-evdev dbus-x11 -y
-chroot chroot apt-get install slick-greeter lightdm lightdm-settings apparmor  --no-install-recommends -y # giriş ekranı olarak lightdm yerine istediğinizi kurabilirsiniz.
-#chroot chroot apt-get install system-config-printer system-config-printer-common cups  --no-install-recommends -y
+chroot chroot apt-get install slick-greeter lightdm lightdm-settings apparmor -y # giriş ekranı olarak lightdm yerine istediğinizi kurabilirsiniz.
+#chroot chroot apt-get install system-config-printer system-config-printer-common cups -y
 
 #### Install lightdm (for lxde and xfce only)
 #chroot chroot apt-get install lightdm lightdm-gtk-greeter -y
@@ -27,7 +27,7 @@ chroot chroot apt-get install cinnamon cinnamon-desktop-environment nemo-filerol
 #chroot chroot apt-get install mousepad -y
 chroot chroot apt-get remove evince gnome-terminal chromium firefox-esr totem pidgin thunderbird --no-install-recommends -y
 chroot chroot apt-get autoremove -y
-chroot chroot apt-get install okular -y
+#chroot chroot apt-get install okular -y
 #chroot chroot apt-get install firefox-esr firefox-esr-l10n-tr firefox-esr-l10n-trs -y
 #chroot chroot apt-get install cinnamon plank task-cinnamon-desktop -y
 
