@@ -1,10 +1,10 @@
 #!/bin/bash
       #firmware-atheros \
-      #firmware-cavium firmware-intel-sound firmware-ivtv \
+      #firmware-cavium firmware-intel-sound firmware-ivtv firmware-ipw2x00 \
       #firmware-zd1211 zd1211-firmware firmware-sof-signed  firmware-siano \
       #firmware-myricom firmware-netxen firmware-qlogic \
 
-chroot chroot apt-get install 
+chroot chroot apt-get install \
       firmware-amd-graphics \
       bluez-firmware \
       firmware-b43-installer \
@@ -13,8 +13,7 @@ chroot chroot apt-get install
       firmware-bnx2x \
       firmware-brcm80211 \
       firmware-iwlwifi \
-      firmware-ipw2x00 \
-      firmware-libertas 
+      firmware-libertas \
       firmware-linux \
       firmware-linux-free \
       firmware-linux-nonfree \
