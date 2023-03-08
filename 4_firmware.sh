@@ -3,12 +3,13 @@
       #firmware-cavium firmware-intel-sound firmware-ivtv firmware-ipw2x00 \
       #firmware-zd1211 zd1211-firmware firmware-sof-signed  firmware-siano \
       #firmware-myricom firmware-netxen firmware-qlogic \
+      #firmware-b43-installer \
+      #firmware-b43legacy-installer \
+ 
 
 chroot chroot apt-get install \
       firmware-amd-graphics \
       bluez-firmware \
-      firmware-b43-installer \
-      firmware-b43legacy-installer \
       firmware-bnx2 \
       firmware-bnx2x \
       firmware-brcm80211 \
