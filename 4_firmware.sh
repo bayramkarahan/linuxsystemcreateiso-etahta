@@ -1,11 +1,9 @@
 #!/bin/bash
-      #firmware-atheros \
-      #firmware-cavium firmware-intel-sound firmware-ivtv firmware-ipw2x00 \
-      #firmware-zd1211 zd1211-firmware firmware-sof-signed  firmware-siano \
-      #firmware-myricom firmware-netxen firmware-qlogic \
+      #firmware-ivtv firmware-ipw2x00 \
+      #firmware-zd1211
       #firmware-b43-installer \
       #firmware-b43legacy-installer \
- 
+      #firmware-intel-sound zd1211-firmware firmware-sof-signed  firmware-siano firmware-myricom firmware-netxen firmware-qlogic firmware-cavium firmware-atheros \
 
 chroot chroot apt-get install \
       firmware-amd-graphics \
