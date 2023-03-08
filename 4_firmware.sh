@@ -7,6 +7,7 @@
 
 chroot chroot apt-get install \
       firmware-amd-graphics \
+      firmware-intel-sound zd1211-firmware firmware-sof-signed  firmware-siano firmware-myricom firmware-netxen firmware-qlogic firmware-cavium firmware-atheros \
       bluez-firmware \
       firmware-bnx2 \
       firmware-bnx2x \
