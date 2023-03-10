@@ -46,6 +46,10 @@ if read -n 1 -t 3 -s ; then
     nano /etc/install.conf
 fi
 source /etc/install.conf
+echo "***************************************************************"
+echo "Sistem icin Belirlenen Diskiniz: $DISK"
+echo "***************************************************************"
+
 if [[ $UID -eq 0 ]] ; then
     mount -t devtmpfs devtmpfs /dev || true
     mount -t proc proc /proc || true
