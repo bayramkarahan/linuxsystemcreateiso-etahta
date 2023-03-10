@@ -28,7 +28,11 @@ hdisk=""
           #echo "diskiniz sdb"
           hdisk="sdb"
          fi
-          echo "Sabit Diskiniz $hdisk Sistem Kurulumu Buraya Yapılacaktır..."
+	 if [ ${#USBKEYS[@]} -eq 0 ];then
+         echo "flahs disk yok"
+            hdisk="sda"
+        fi
+          echo "Sabit Diskiniz $hdisk Sistem Kurulumu Buraya Yapilacaktir..."
 
 ##########################################################################
 echo "export DISK=$hdisk" > /etc/install.conf
