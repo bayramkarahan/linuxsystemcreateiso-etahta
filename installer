@@ -37,7 +37,6 @@ hdisk=""
 ##########################################################################
 echo "export DISK=$hdisk" > /etc/install.conf
 echo "export username=etapadmin" >> /etc/install.conf
-echo "export password=etap+pardus!" >> /etc/install.conf
 echo "export debug=false" >> /etc/install.conf
 echo "export partitioning=true" >> /etc/install.conf
 echo "If you press any key in 3 seconds, switch to edit mode"
@@ -202,11 +201,14 @@ touch /target/home/ebaqr/.config/np
 for grp in cdrom floppy audio dip video plugdev netdev bluetooth lpadmin scanner ; do
     chroot /target usermod -aG $grp ebaqr || true
 done
+pwgen -By -1 5 1>>/target/etc/qrpsw
+chmod 640 /target/etc/qrpsw
+psw=$(cat /target/etc/qrpsw)
 
-echo -e "$password\n$password\n" | chroot /target passwd $username
-echo -e "$password\n$password\n" | chroot /target passwd root
-echo -e "ogretmen\nogretmen\n" | chroot /target passwd ogretmen
-echo -e "etahta+ebaqr\netahta+ebaqr\n" | chroot /target passwd ebaqr
+echo -e "1\n1\n" | chroot /target passwd $username
+#echo -e "$password\n$password\n" | chroot /target passwd root
+echo -e "1\n1\n" | chroot /target passwd ogretmen
+echo -e "$psw\n$psw\n" | chroot /target passwd ebaqr
 
 
 
