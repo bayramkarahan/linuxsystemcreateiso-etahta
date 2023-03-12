@@ -53,7 +53,7 @@ chroot chroot apt-get install gnupg -y
 
 #### grub packages
 #chroot chroot apt-get dist-upgrade -y
-chroot chroot apt-get install grub-pc-bin grub-efi-ia32-bin grub-efi pwgen dialog -y
+chroot chroot apt-get install grub-pc-bin grub-efi-ia32-bin grub-efi pwgen -y
 
 #### live packages for debian/devuan
 chroot chroot apt-get install live-config live-boot -y

@@ -3,7 +3,16 @@ export PATH=/usr/bin:/usr/sbin:/bin:/sbin
 msg(){
     echo -e "\033[32;1m$1\033[;0m"
 }
-
+fallback(){
+        echo -e "\033[31;1mInstallation failed.\033[;0m"
+        echo -e "Creating a shell for debuging. Good luck :D"
+        PS1="\[\033[32;1m\]>>>\[\033[;0m\]" /bin/bash --norc --noprofile
+        if [[ $$ -eq 0 ]] ; then
+            echo o > /proc/sysrq-trigger
+        else
+            exit 1
+        fi
+}
 ########################choose from multiple hard drives#############################
 selectdisk=0
 createmenu=0
@@ -33,40 +42,17 @@ found="0"
         		disk[${#disk[@]}]="$item"
         	fi        
 done
-usbKeyChoose() {
 
-i=1
-	if [ "$createmenu" == 0 ]
-	then
-		for dev in ${disk[@]} ;do
-		    #read model </sys/block/$dev/device/model 2>&1 > /dev/null
-		    menu+=("$i" "$dev $model")
-		    i=$[i + 1]
-		    createmenu=1
-		done
-        fi
-while choice=$(dialog --title "$TITLE" \
-                 --menu "Yuklenecek Diski Seciniz" 10 40 3 "${menu[@]}" \
-                 2>&1 >/dev/tty)
-    do
-    case $choice in
-        1) selectdisk=${menu[1]};break;;
-        2) selectdisk=${menu[3]};break;; # some action on 2
-        *) echo "Ooops - unknown choice $REPLY";;
-    esac
-done
-}
+
+
 if [ ${#disk[@]} == 1 ]
 then
-#echo "Sabit Diskiniz ${disk[0]}"
+echo "Tek Sabit Diskiniz var: ${disk[0]}"
 selectdisk=${disk[0]}
 else
-#echo "Birden Fazla Sabit Diskiniz Var"
-while [ $selectdisk == 0 ]
-do
-usbKeyChoose
-done
-clear # clear after user pressed Cancel
+echo "Birden Fazla Sabit Diskiniz Var : ${disk[@]}"
+echo "Kurulum İşlemini Canlı Yükle Seçeneğinden Yapınız.."
+fallback
 fi
 echo "Sabit Diskiniz  $selectdisk"
 
@@ -94,16 +80,7 @@ fi
 mkdir -p /source /target || true
 mount /dev/loop0 /source || true
 
-fallback(){
-        echo -e "\033[31;1mInstallation failed.\033[;0m"
-        echo -e "Creating a shell for debuging. Good luck :D"
-        PS1="\[\033[32;1m\]>>>\[\033[;0m\]" /bin/bash --norc --noprofile
-        if [[ $$ -eq 0 ]] ; then
-            echo o > /proc/sysrq-trigger
-        else
-            exit 1
-        fi
-}
+
 
 if [[ "$debug" != "false" ]] ; then
     PS1="\[\033[32;1m\]>>>\[\033[;0m\]" /bin/bash --norc --noprofile
