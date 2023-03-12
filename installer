@@ -14,50 +14,32 @@ fallback(){
         fi
 }
 ########################choose from multiple hard drives#############################
-selectdisk=0
-createmenu=0
-USBKEYS=($(
+hdisk=""
+     USBKEYS=($(
                 xargs -n1 readlink < <(echo /sys/block/*) |
                 sed -ne 's+^.*/usb[0-9].*/\([^/]*\)$+/sys/block/\1/device/uevent+p' |
                 xargs grep -H ^DRIVER=sd |
                 sed s/device.uevent.*$/size/ |
                 xargs grep -Hv ^0$ |
                 cut -d / -f 4                 ))
-#echo ${USBKEYS[@]}
-USBKEYS+=("sr0")
-for item in $(ls /sys/block/)
-do
-found="0"
-	for dev in ${USBKEYS[@]} ;do
-	#echo ${item}-${dev}
-		if [ "$item" == "$dev" ]
-        	then		
-			found="1"
-        	fi       	
-	done
-	
-	if [ "$found" == "0" ]
-        	then
-        		#disk+=("$item")
-        		disk[${#disk[@]}]="$item"
-        	fi        
-done
+        
 
-
-
-if [ ${#disk[@]} == 1 ]
-then
-echo "Tek Sabit Diskiniz var: ${disk[0]}"
-selectdisk=${disk[0]}
-else
-echo "Birden Fazla Sabit Diskiniz Var : ${disk[@]}"
-echo "Kurulum İşlemini Canlı Yükle Seçeneğinden Yapınız.."
-fallback
-fi
-echo "Sabit Diskiniz  $selectdisk"
+         if [ "$USBKEYS" == "sdb" ]
+         then
+          #echo "diskiniz sda"
+          hdisk="sda"
+          else
+          #echo "diskiniz sdb"
+          hdisk="sdb"
+         fi
+	 if [ ${#USBKEYS[@]} -eq 0 ];then
+         echo "flahs disk yok"
+            hdisk="sda"
+        fi
+          echo "Sabit Diskiniz $hdisk Sistem Kurulumu Buraya Yapilacaktir..."
 
 ###########################end choose from multiple hard drives#############################
-echo "export DISK=$selectdisk" > /etc/install.conf
+echo "export DISK=$hdisk" > /etc/install.conf
 echo "export username=etapadmin" >> /etc/install.conf
 echo "export debug=false" >> /etc/install.conf
 echo "export partitioning=true" >> /etc/install.conf
