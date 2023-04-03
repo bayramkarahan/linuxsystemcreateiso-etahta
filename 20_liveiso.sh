@@ -18,7 +18,7 @@ cp -pf chroot/boot/vmlinuz-* liveiso/boot/vmlinuz
 #### Write grub.cfg
 mkdir -p liveiso/boot/grub/
 echo 'menuentry "Canli GNU/Linux 64-bit" --class liveiso {' > liveiso/boot/grub/grub.cfg
-echo '    linux /boot/vmlinuz boot=live quiet live-config --' >> liveiso/boot/grub/grub.cfg
+echo '    linux /boot/vmlinuz boot=live locales=tr_TR.UTF-8,en_US.UTF-8 keyboard-layouts=tr username=etahta hostname=tahta user-fullname=etahta noswap quiet live-config --' >> liveiso/boot/grub/grub.cfg
 echo '    initrd /boot/initrd.img' >> liveiso/boot/grub/grub.cfg
 echo '}' >> liveiso/boot/grub/grub.cfg
 
